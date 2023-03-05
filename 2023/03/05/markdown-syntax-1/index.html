@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Flo L" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Markdown语法-1 
+      
+      
+      |
+    
+     Flo&#39;s Note
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/smile.png">
+    <link rel="icon" href="/images/smile.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/smile.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Florence</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Markdown语法-1</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-03-05 21:34:45
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
+                    #blog搭建日记
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <br/>
+
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h3><p>写blog文章的时候，使用到的语言是Markdown。它的语法很简单，常用的标记也就那几个，掌握起来很容易。</p>
+<p>p.s 我已经习惯在notion上写日记，而notion可以导出md格式的文件，所以我现在是先在notion上编辑好，再复制粘贴到blog post的文件中，通过vs code预览来调整格式。另外，Markdown也支持HTML标签的使用，一些Markdown语法无法实现的样式，我会用HTML标签来实现。</p>
+<hr>
+<h3 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a><strong>标题语法</strong></h3><p>如果要创建标题，可以在文本前加上<code>#</code>（井号）。<code>#</code>的个数代表了标题的级别，与HTML中的<code>&lt;h&gt;</code>标签对应。</p>
+<center><img src="https://i.imgur.com/iQQ69Me.png" alt="markdown-heading-syntax-1" width="80%"></center>
+
+<p>当然，也可以在文本下方加上任意数量的<code>==</code>来识别一级标题，用任意数量的<code>--</code>来识别二级标题。</p>
+<center><img src="https://i.imgur.com/8jiUuKr.png" alt="markdown-heading-syntax-2" width="80%"></center>
+
+<p>注意：使用<code>#</code>标记的话，记得在<code>#</code>标记和文本之间添加一个空格，以及在标题文本的前后都各空一行。</p>
+<center><img src="https://i.imgur.com/XUmSA4I.png" alt="heading-best-practices" width="80%"></center>
+
+<br/>
+
+<h3 id="段落和换行语法"><a href="#段落和换行语法" class="headerlink" title="段落和换行语法"></a><strong>段落和换行语法</strong></h3><p>如果要创建段落，可以在两行文本之间加上空白行。</p>
+<center><img src="https://i.imgur.com/cYhvltI.png" alt="paragraphs" width="80%"></center>
+
+<p>注意不要用空格（space）和制表符（tab）来缩进段落。如果想要缩进段落，可以在段首使用空格符号：<code>&amp;nbsp;</code>（半角空格）或<code>&amp;emsp;</code>（全角空格）。</p>
+<p>如果要换行，在行尾添加两个（或以上）空格，再回车。</p>
+<center><img src="https://i.imgur.com/wA8jLPa.png" alt="line-breaks" width="80%"></center>
+
+<p>另外，如果想要创建空白行，可以使用HTML里的<code>&lt;br&gt;</code>标签，或者在新的一行中使用上面提到的空格符号（<code>&amp;nbsp;</code>或<code>&amp;emsp;</code>）。使用空格符号时，记得带上分号，并且要在空行使用（如果在行内使用的话就是单纯地添加空格）。</p>
+<br/>
+
+<h3 id="文本样式语法"><a href="#文本样式语法" class="headerlink" title="文本样式语法"></a><strong>文本样式语法</strong></h3><ul>
+<li><p><em>斜体</em>：在想要斜体强调的文本前后使用一个<code>*</code>（星号）或<code>_</code>（下划线）。<br>注意，如果想要斜体强调一个单词或短语（中间没有空格）中的某一部分时，为了兼容性考虑，使用<code>*</code>而不是<code>_</code>。</p>
+  <center><img src="https://i.imgur.com/RgVYJ71.png" alt="italic" width="90%"></center>
+  </li>
+<li><p><strong>加粗</strong>：在想要加粗的文本前后使用两个<code>*</code>或<code>_</code>。<br>同样的，如果想要加粗一个单词中的某一部分时，不要用下划线<code>_</code>。</p>
+  <center><img src="https://i.imgur.com/gFtWEWx.png" alt="bold" width="90%"></center>
+</li>
+<li><p><em><strong>同时加粗和斜体</strong></em>：在想要强调的文本前后使用三个<code>*</code>或<code>_</code>。注意在单词内不要使用下划线<code>_</code>。</p>
+  <center><img src="https://i.imgur.com/SdWo81Q.png" alt="bold-and-italic" width="90%"></center>
+</li>
+<li><p><u>下划线</u>：Markdown本身没有实现文本下划线的语法，可以使用HTML的<code>&lt;u&gt;</code>标签来实现。比如：<code>&lt;u&gt;text with underline&lt;/u&gt;</code>，呈现出来的效果为<u>text with underline</u>。</p>
+</li>
+<li><p><del>删除线</del>：在文本前后添加两个<code>~</code>（波浪线）符号。比如：<code>~~strikethrough the text~~</code>，呈现出来的效果为<del>strikethrough the text</del>。</p>
+</li>
+<li><p><mark>高亮</mark>：在文本前后添加两个<code>=</code>，比如：<code>==highlight==</code>，但有些Markdown编辑器可能不兼容（我在vs code上试了一下好像就是不行的）。也可以使用HTML的<code>&lt;mark&gt;</code>标签来实现。</p>
+</li>
+<li><p><font color="#a67f78">字体颜色</font>：使用HTML里的<code>&lt;font&gt;</code>标签的<code>color</code>属性，比如：<code>&lt;font color=&quot;red&quot;&gt;red text&lt;/font&gt;</code>，呈现出来的效果就是 <font color="red">red text</font>。</p>
+</li>
+<li><p><font face="楷体">更改字体</font>：使用<code>&lt;font&gt;</code>标签的<code>face</code>属性，比如：<code>&lt;font face=&quot;cursive&quot;&gt;Cursive&lt;/font&gt;</code>，呈现出来的效果就是 <font face="cursive">Cursive</font>。</p>
+</li>
+<li><p><font size=5>字体大小</font>：使用<code>&lt;font&gt;</code>标签的<code>size</code>属性，比如：<code>&lt;font size=2&gt;font size 2&lt;/font&gt;</code>，呈现出来的效果就是 <font size=2>font size 2</font>（一般默认为3，数值范围为1~7）。</p>
+</li>
+</ul>
+<br/>
+
+<h3 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a><strong>引用语法</strong></h3><p>要创建块引用，在段落前加<code>&gt;</code>就可以了。</p>
+<p>记得在文本和<code>&gt;</code>之间加一个空格。</p>
+<p>多个段落的块引用，在段落之间的空白行加上一个<code>&gt;</code>符号。</p>
+<p>嵌套块引用，在次级段落前多加一个<code>&gt;</code>符号。</p>
+<p>🌰 举个例子：</p>
+<pre><code>&gt; This is a blockquote.
+&gt;
+&gt; This is a different paragraph.
+&gt;
+&gt;&gt; This is a nested blockquote.
+</code></pre>
+<p>渲染出来的效果是：</p>
+<blockquote>
+<p>This is a blockquote.<br>This is a different paragraph.</p>
+<blockquote>
+<p>This is a nested blockquote.</p>
+</blockquote>
+</blockquote>
+<p>块引用中也可以给文本添加其它的样式，例如标题、加粗、斜体、列表等，但不是所有的样式都能添加。</p>
+<p>注意：记得在块引用的前后加上空白行。</p>
+<center><img src="https://i.imgur.com/Tp6hE09.png" alt="blockquote" width="80%"></center>
+
+<br/>
+
+<h3 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a><strong>列表语法</strong></h3><p>Markdown可以创建有序列表和无序列表。</p>
+<ul>
+<li><p>有序列表：在每一个列表项前加上数字和点，并且在序号和文本之间添加一个空格。列表项的序号要从1开始。比如：</p>
+  <center><img src="https://i.imgur.com/99VNV02.png" alt="ordered-list"></center>
+</li>
+<li><p>无序列表：在每一个列表项前添加一个<code>-</code>或<code>*</code>或<code>+</code>。记得加空格。比如：</p>
+  <center><img src="https://i.imgur.com/FIoOzWz.png" alt="unordered-list"></center></li>
+</ul>
+<p>注意：如果你使用了<code>-</code>来标记一个无序列表的列表项，同一列表中的其它列表项也要用同一符号（也就是<code>-</code>）来标记。</p>
+<br/>
+
+<h3 id="代码语法"><a href="#代码语法" class="headerlink" title="代码语法"></a><strong>代码语法</strong></h3><p>如果要将单词或短语表示为代码，可以在代码文本的前后加上一个<code>`</code>（反引号）。比如：</p>
+<center><img src="https://i.imgur.com/OGDTRZN.png" alt="code" width="80%"></center>
+
+<p>如果想要在代码中包含一个或多个反引号，可以将代码包裹在双反引号<code>``</code>中。比如：</p>
+<center><img src="https://i.imgur.com/JB0zCQI.png" alt="escaping-backticks" width="80%"></center>
+
+<p>如果要创建代码块，将代码块的每一行缩进至少四个空格或一个制表符。比如：</p>
+<pre><code>    &lt;html&gt;
+        &lt;head&gt;
+        &lt;/head&gt;
+    &lt;/html&gt;
+</code></pre>
+<p>渲染出来的效果就是：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+&lt;html&gt;
+</code></pre>
+<br/>
+
+<h3 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a><strong>分隔线语法</strong></h3><p>创建分隔线，可以在单独的空行中添加三个（或以上）<code>***</code>或<code>---</code>或<code>___</code>。</p>
+<p>注意：记得在分隔线的前后加上空白行。</p>
+<center><img src="https://i.imgur.com/yoZMXzO.png" alt="horizontal-rule" width="80%"></center>
+
+<br/>
+
+<h3 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a><strong>链接语法</strong></h3><ul>
+<li><p>链接的文本放在中括号里，链接地址放在后面的圆括号里，title（也就是当鼠标指针停在链接上时出现的文字）放在链接地址后面，用空格隔开。</p>
+<p>  🌰 举个例子：</p>
+<pre><code>  Here is my [blog page](https://june-ss.github.io/ &quot;Flo&#39;s blog&quot;).
+</code></pre>
+<p>  渲染出来的效果就是：Here is my <a target="_blank" rel="noopener" href="https://june-ss.github.io/" title="Flo&#39;s blog">blog page</a>.</p>
+</li>
+<li><p>URL地址和email地址可以放在尖括号里，比如：<br><code>&lt;https://june-ss.github.io/&gt;</code>渲染出来的效果为 <a target="_blank" rel="noopener" href="https://june-ss.github.io/">https://june-ss.github.io/</a><br><code>&lt;fake@example.com&gt;</code>渲染出来的效果为 <a href="mailto:&#102;&#97;&#107;&#101;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#102;&#97;&#107;&#101;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
+</li>
+<li><p>如果想要强调链接（加粗或斜体），可以在链接语法前后加上相应的标记，比如：<br/><code>This is a **[link](https://june-ss.github.io/)**.</code>渲染出来的效果为 Here is my <strong><a target="_blank" rel="noopener" href="https://june-ss.github.io/">blog page</a></strong>.<br/><code>This is a *[link](https://june-ss.github.io/)*.</code>渲染出来的效果为 Here is my <em><a target="_blank" rel="noopener" href="https://june-ss.github.io/">blog page</a></em>.</p>
+</li>
+<li><p>如果要将链接表示为代码，则是给链接文本加上反引号，比如：<br/><code>Here is my <a target="_blank" rel="noopener" href="https://june-ss.github.io/"><code>blog page</code></a>.</code> 渲染出来的效果为 Here is my <a target="_blank" rel="noopener" href="https://june-ss.github.io/"><code>blog page</code></a>.</p>
+</li>
+</ul>
+<p>注意：为了更好地兼容，尽量使用<code>%20</code>来代替链接中的空格。</p>
+<center><img src="https://i.imgur.com/2FIRDL2.png" alt="link" width="80%"></center>
+
+<br/>
+
+<h3 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a><strong>图片语法</strong></h3><p>Markdown的图片语法为：<br/><code>![a photo of sea](https://imgur.com/aeyg65Y &quot;sea&quot;)</code><br/>渲染出来的效果为：<img src="https://i.imgur.com/aeyg65Y.jpg" alt="a photo of sea" title="sea"></p>
+<p>如果要为图片添加链接，则将图片放在方括号里，后面加上圆括号中的链接地址，比如：<br/><code>[![sunset in Ediburgh](https://imgur.com/94hgQ6k)](https://june-ss.github.io/)</code><br/>渲染出来的效果为：<a target="_blank" rel="noopener" href="https://june-ss.github.io/"><img src="https://i.imgur.com/94hgQ6k.jpg" alt="sunset in Ediburgh"></a></p>
+<p>但Markdown不支持对图片进行大小的调整，如果想要调整图片大小，可以使用HTML的<code>&lt;img&gt;</code>标签添加图片并进行调整。</p>
+<br/>
+
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a><strong>转义字符</strong></h3><p>Markdown使用反斜杠<code>\</code>来对字符进行转义。</p>
+<p>比如你想在文本中显示一个星号，但星号在Markdown中用于创建一个无序列表项，如果只输入<code>*</code>，是无法显示出星号的，那么此时用<code>\</code>来对符号进行转义（也就是<code>\*</code>），就可以显示出星号了。比如：<br/><code>\* Without the backslash, this would be a bullet in an unordered list.</code><br/>显示出来的就是：<br/>* Without the backslash, this would be a bullet in an unordered list.<br/></p>
+<p>下面的字符都可以用<code>\</code>来进行转义：</p>
+<center><img src="https://i.imgur.com/mQAl5a6.png" alt="escaping-characters" width="80%"></center>
+
+<br/>
+
+<h3 id="内嵌HTML标签"><a href="#内嵌HTML标签" class="headerlink" title="内嵌HTML标签"></a><strong>内嵌HTML标签</strong></h3><p>在支持HTML标签的Markdown应用中，可以使用HTML标签，而不用Markdown的语法格式，有时候会更方便。</p>
+<p>使用HTML中的区块元素（比如<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>）时，要在其前后加上空白行，与其它内容分隔开。而且这些元素的开始与结尾标签不可以缩进。</p>
+<p>另外，在HTML的块级标签内不能使用Markdown语法（会失效）。</p>
+<hr>
+<br/>
+
+<p>Ref: <a target="_blank" rel="noopener" href="https://www.markdownguide.org/">https://www.markdownguide.org/</a></p>
+<p>以及，图片语法部分中用来举例的那两张照片是我自己拍的🥺</p>
+<br/>
+
+<center>-</center>
+
+<br/>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/03/04/build-a-blog/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-03-05 21:34:45
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
+                        #blog搭建日记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="toc-text">标题语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AE%B5%E8%90%BD%E5%92%8C%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="toc-text">段落和换行语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-text">文本样式语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-text">引用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="toc-text">列表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="toc-text">代码语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="toc-text">分隔线语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="toc-text">链接语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="toc-text">图片语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%B5%8CHTML%E6%A0%87%E7%AD%BE"><span class="toc-text">内嵌HTML标签</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: '113IcqqtpWpV1lw5ZCONYtJs-MdYXbMMI',
+        appKey: 'p73yEGvtmNtm1YtxfcQIOnGH',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/June-ss">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/June-ss">Copyright © 2023 Florence L</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="find...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Markdown%E8%AF%AD%E6%B3%95-1 + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F03%2F05%2Fmarkdown-syntax-1%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/03/05/markdown-syntax-1/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Flo L" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      从零开始搭建Blog 
+      
+      
+      |
+    
+     Flo&#39;s Note
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/smile.png">
+    <link rel="icon" href="/images/smile.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/smile.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Florence</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">从零开始搭建Blog</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-03-04 13:55:25
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
+                    #blog搭建日记
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <br />
+
+<p><strong>受豆瓣wit小组<a href="https://douban.com/group/topic/267508386/" target="_blank">一个帖子</a>的启发，我决定搭建一个个人blog，记录我的转码过程。第一篇文章就简单记录一下利用hexo和github搭建个人blog的过程。</strong></p>
+<br />
+
+<hr>
+<h3 id="首先是开始建站"><a href="#首先是开始建站" class="headerlink" title="首先是开始建站"></a><strong>首先是开始建站</strong></h3><ul>
+<li><p>你的电脑上需要安装git和nodejs，去官网选择适合自己的版本下载安装即可。</p>
+</li>
+<li><p>然后，你需要在GitHub上创建个人仓库。点击GitHub右上角，New repository创建新仓库，仓库名为：<strong>username.github.io</strong>。比如我的用户名为June-ss，那我创建的新仓库名就是<strong>june-ss.github.io</strong>。</p>
+  <center><img src="https://i.imgur.com/MW039aq.png" alt="create a new repository" width="60%"></center>
+</li>
+<li><p>在自己常用的（或者准备存放blog文件的）文件夹里右键打开git，输入<code>npm install -g hexo-cli</code>安装hexo。</p>
+  <center><img src="https://i.imgur.com/vLDWfoN.png" alt="git install hexo" width="80%"></center>
+
+</li>
+<li><p>安装完成后，输入<code>hexo init &lt;foldername&gt;</code>初始化你的blog，此时你的文件夹里会出现一个叫<foldername>的文件夹，这也就是你的blog文件夹。然后转到新建出来的这个文件夹，右键打开git（或者用<code>cd /path</code>命令）。</p>
+</li>
+<li><p>依次输入<code>hexo g</code>、<code>hexo s</code>，然后在浏览器输入<strong>localhost:4000</strong>来对blog进行本地预览。一开始大概是这样的 👇🏼</p>
+  <center><img src="https://i.imgur.com/MN5Hgug.png" alt="default page" width="90%"></center>
+  </li>
+<li><p>插入几条hexo的常见命令：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]            #初始化博客</span><br><span class="line">$ hexo new &lt;title&gt;              #新建一篇文章，new可以简写成n</span><br><span class="line">$ hexo generate                 #生成静态文件，generate可以简写成g</span><br><span class="line">$ hexo server                   #启动服务器预览，server可以简写成s，默认的访问网址为http://localhost:4000/</span><br><span class="line">$ hexo deploy                   #部署网站，deploy可以简写成d</span><br><span class="line">$ hexo clean                    #清除缓存，clean可以简写成cl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地预览没问题后，就可以发布网站了。打开blog文件夹里的站点配置文件（我用的是vs code）。</p>
+  <center><img src="https://i.imgur.com/DjtNq6g.png" alt="open the config file" width="70%"></center>
+  
+<p>  拉到最后，进行以下的修改，并ctrl+s保存。</p>
+  <img src="https://i.imgur.com/Eme8zBg.png" alt="change the deploy">
+  </li>
+<li><p>回到git命令窗口，依次输入<code>hexo cl</code>、<code>hexo g</code>、<code>hexo d</code>，然后打开浏览器，输入你的blog地址（比如我的是<a href="https://june-ss/github.io/" target="_blank">https://june-ss/github.io/</a>），就能看到你的blog网站上线了。</p>
+</li>
+</ul>
+<hr>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a><strong><strong><strong><strong><strong><strong><strong>更换主题</strong></strong></strong></strong></strong></strong></strong></h3><p>你可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a>选择你喜欢的主题进行更换。举个例子，如果你想使用<a target="_blank" rel="noopener" href="https://github.com/Dreyer/hexo-theme-artemis">artemis</a>这款主题（如图）：</p>
+<center><img src="https://i.imgur.com/RWu9hOE.png" alt="artemis theme" width="80%"></center>
+
+<p>点击蓝色标题，按照作者在README.md中所写的那样安装并配置就可以了。在这里，先在git里依次输入以下指令，代表将artemis主题下载到blog目录的themes主题下的artemis文件夹中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap</span><br><span class="line">git clone https://github.com/Dreyer/hexo-theme-artemis.git themes/artemis</span><br></pre></td></tr></table></figure>
+
+<p>然后打开blog文件夹的站点配置文件（**_config.yml**），将themes改成artemis。</p>
+<center><img src="https://i.imgur.com/He5GQXF.png" alt="change your theme" width="80%"></center>
+
+<p>你也可以根据自己的喜好修改你的主题配置。</p>
+<p>配置好了之后，再次输入<code>hexo g</code>、<code>hexo d</code>部署网站（如果网页有问题的话可以输入<code>hexo cl</code>清除缓存，然后再试试）。</p>
+<hr>
+<h3 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a><strong><strong><strong><strong><strong><strong>个性化设置</strong></strong></strong></strong></strong></strong></h3><p>你也可以根据个人喜好和需要添加不同的插件。在<a href="https://hexo.io/plugins/" target="_blank">这个网页</a>你可以看到所有hexo支持的插件，每一个插件的github页面都有安装和使用的相关说明。</p>
+<p>还有一些基本的设置，比如站点配置文件（**_config.yml**）里，你可以修改你的网站信息：</p>
+<center><img src="https://i.imgur.com/x2lvi47.png" alt="change your config" width="60%"></center>
+
+<p><code>title</code>和<code>subtitle</code>就是网站的标题和副标题；</p>
+<p><code>description</code>和<code>keywords</code>分别是网站的描述和关键词，主要用于SEO；</p>
+<p><code>author</code>是你自己的名字，主要用于显示文章的作者；</p>
+<p><code>language</code>是网站使用的语言，如果要使用简中的话（取决于你要使用的主题），一般会设置为zh-CN；</p>
+<p><code>timezone</code>是网站的时区，如果不设置的话默认为你电脑的时区。</p>
+<p>更多关于配置的信息可以参考<a href=”[https://hexo.io/docs/configuration.html](https://hexo.io/docs/configuration.html)” target="_blank">官方docs</a>。</p>
+<hr>
+<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a><strong><strong><strong><strong><strong><strong>发布文章</strong></strong></strong></strong></strong></strong></h3><p>在命令行中输入<code>hexo n &lt;titlename&gt;</code>创建一篇新文章。</p>
+<p>输入这条命令之后，在<span style="font-weight: bold">\source_posts</span>文件夹中就可以看到名为<span style="font-weight: bold">&lt;title&gt;.md</span>的文件。用markdown编辑器打开（我用的是vs code，可以一边输入一边在右边预览文章效果，很方便进行修改调整），然后编辑markdown文件就可以了。</p>
+<p>举个例子：</p>
+<center><img src="https://i.imgur.com/Q1uBXwA.png" alt="create a new post" width="80%"></center>
+
+<p>编辑完成后，可以通过命令<code>hexo s --debug</code>在<strong>localhost:4000</strong>预览文章效果。确认没问题后，输入<code>hexo g</code>、<code>hexo d</code>生成、部署网页。</p>
+<hr>
+<h3 id="我遇到过的问题"><a href="#我遇到过的问题" class="headerlink" title="我遇到过的问题"></a><strong><strong><strong><strong><strong><strong><strong><strong><strong>我遇到过的问题</strong></strong></strong></strong></strong></strong></strong></strong></strong></h3><p>在进行本地预览的时候，我访问localhost:4000一直都显示无法连接：</p>
+<center><img src="https://i.imgur.com/mgYaFf1.png" alt="cannot connect" width="90%"></center>
+
+<p>我google了半天，尝试了各种方法，包括换端口、去控制面板设置网络连接等等都没有成功。最后，重启了一下电脑，我又成功连接上了🤣</p>
+<p>总之，万事不决，重启电脑😼</p>
+<p>还是说一下google到的两种解决办法。</p>
+<ul>
+<li><p>换端口</p>
+<p>  在git命令窗口输入<code>hexo server -p 5000</code>（这个5000也可以换成别的，比如4001之类的），然后在浏览器输入更换后的地址，比如<strong>localhost:5000</strong>。</p>
+</li>
+<li><p>设置网络连接</p>
+<p>  打开控制面板，点开程序和功能的【启用或关闭windows功能】。</p>
+  <center><img src="https://i.imgur.com/bXCUgsN.png" alt="control panel" width="80%"></center>
+  
+<p>  然后把Internet Information Services里的FTP服务器勾上。</p>
+  <center><img src="https://i.imgur.com/RoOKRve.png" alt="set FTP" width="80%"></center></li>
+</ul>
+<hr>
+<br/>
+
+<center style="font-weight: bold">以上，一个简单的个人blog网站就做好了🥳</center>
+
+<br />
+
+<center>-</center>
+
+<br />
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-03-04 13:55:25
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
+                        #blog搭建日记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2023/03/05/markdown-syntax-1/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%98%AF%E5%BC%80%E5%A7%8B%E5%BB%BA%E7%AB%99"><span class="toc-text">首先是开始建站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="toc-text">个性化设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0"><span class="toc-text">发布文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E9%81%87%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">我遇到过的问题</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: '113IcqqtpWpV1lw5ZCONYtJs-MdYXbMMI',
+        appKey: 'p73yEGvtmNtm1YtxfcQIOnGH',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/June-ss">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/June-ss">Copyright © 2023 Florence L</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="find...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BABlog + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F03%2F04%2Fbuild-a-blog%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/03/04/build-a-blog/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
