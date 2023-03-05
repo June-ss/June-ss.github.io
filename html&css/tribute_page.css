@@ -1,0 +1,108 @@
+*{
+    font-family: sans-serif;
+  }
+  
+  main{
+    background-color: #e1dcd9;
+    padding: 25px;
+    margin: 25px auto;
+  }
+  
+  h1{
+    text-align: center;
+    font-size: 2em;
+    margin: 30px auto;
+    padding: 25px 10px 0px;
+  }
+  
+  p#subtitle{
+    text-align: center;
+    color: #212121;
+  }
+  
+  div#img-div{
+    background-color: #fcf9f790;
+    margin: auto;
+  }
+  
+  img{
+    display: block;
+    margin: auto;
+    width: 90%;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    height: auto;
+  }
+  
+  div#img-caption{
+    text-align:center;
+    padding-bottom: 15px;
+    color: #32435f;
+  }
+  
+  p#timeline{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #212121;
+  }
+  
+  ul{
+    margin: auto;
+    max-width: 50%;
+    padding-bottom: 25px;
+    line-height: 25px;
+  }
+  
+  ul li{
+    padding: 10px;
+  }
+  
+  .bold{
+    font-weight:bold;
+  }
+  
+  .sep1{
+    margin: 0 20% 0;
+    border-style: dashed;
+    color: #8f8681;
+  }
+  
+  p#commemoration{
+    text-align: center;
+    padding-top: 25px;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #212121;
+  }
+  
+  .sep2{
+    padding-bottom: 20px;
+    border-style: none;
+  }
+  
+  div#wiki{
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  div#women-in-computing{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  h3{
+    color: #212121;
+    margin-bottom: 10px;
+  }
+  
+  a:link{
+    color: #a67f78;
+  }
+  
+  a:visited{
+    color: #8f8681;
+  }
