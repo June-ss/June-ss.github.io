@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2023/3 
+      Celebrate Women&#39;s day 
       
       
       |
@@ -102,50 +102,161 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Celebrate Women's day</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-03-08 21:07:15
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/web-dev-note/" title="web dev note">
+                    #web dev note
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <br>
+
+<p>Today is International Women’s Day, and I built a tribute page to commemorate Ada Lovelace, the first computer programmer, a brilliant woman (actually it is modified on the basis of my previous project on freeCodeCamp🤣 I just added some simple fuctions using javascript I learned recently and optimised the layout).</p>
+<p>Here is the link👉 <a target="_blank" rel="noopener" href="https://ada-lovelace-tribute-page.netlify.app/">https://ada-lovelace-tribute-page.netlify.app/</a></p>
+<p>You can also see the preview here. 👇</p>
+<p><img src="https://i.imgur.com/xjmJXQv.png" alt="page-1"></p>
+<p><img src="https://i.imgur.com/zfC4CGo.png" alt="page-2"></p>
+<p><img src="https://i.imgur.com/S4uaEJE.png" alt="page-3"></p>
+<p><img src="https://i.imgur.com/KYTIGXU.png" alt="page-4"></p>
+<p><img src="https://i.imgur.com/jGGk6y2.png" alt="page-5"></p>
+<p>As you can see, there is a menu button and a scroll-to-top button. 👇<br><img src="https://i.imgur.com/gbpkF7Y.gif" alt="Imgur"></p>
+<p>Hope you enjoy it.😉</p>
+<p>p.s. I think it is better to display on pc. I open the page on my phone and my pad, some fonts are not compatible and the layout somewhere looks kind of weird anyway…😢</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2023/03/05/markdown-syntax-1/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-03-08 21:07:15
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/web-dev-note/" title="web dev note">
+                        #web dev note
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Celebrate Women's day">
-        <div class="time-m-d">03-08</div>
-        <div class="title">
-          <a href="/2023/03/08/women-day/">
-            <span>Celebrate Women's day</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Markdown语法-1">
-        <div class="time-m-d">03-05</div>
-        <div class="title">
-          <a href="/2023/03/05/markdown-syntax-1/">
-            <span>Markdown语法-1</span>
-          </a>
-        </div>
-      </div>
+
     
-      <div class="post-item" title="从零开始搭建Blog">
-        <div class="time-m-d">03-04</div>
-        <div class="title">
-          <a href="/2023/03/04/build-a-blog/">
-            <span>从零开始搭建Blog</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: '113IcqqtpWpV1lw5ZCONYtJs-MdYXbMMI',
+        appKey: 'p73yEGvtmNtm1YtxfcQIOnGH',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -400,6 +511,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Celebrate%20Women's%20day + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F03%2F08%2Fwomen-day%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/03/08/women-day/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
