@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>hexo部署时出现&#39;spawn failed&#39;错误</title>
+      <link href="/2023/03/09/deployment-problem/"/>
+      <url>/2023/03/09/deployment-problem/</url>
+      
+        <content type="html"><![CDATA[<br><p>之前部署blog的时候，出现了这样的错误：</p><p><img src="https://i.imgur.com/JWjKCgP.png" alt="error"></p><p>在网上搜了一些解决方案，第一次的时候用的是下面的方法 👇</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 进入blog的根目录</span><br><span class="line">cd /d/user/blog/</span><br><span class="line"></span><br><span class="line">## 删除git的部署文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">## 然后执行以下命令</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><p>完成了之后成功部署了。</p><p>当时我并不知道core.autocrlf是干嘛的，只是搜出来很多人都在说这个方法我就照做了。后来我去搜了一下core.autoarlf到底是什么，网上的解答说这个主要是解决换行符的问题。具体的可以看一下这个帖子：<a href="https://stackoverflow.com/questions/3206843/how-line-ending-conversions-work-with-git-core-autocrlf-between-different-operat">How line ending conversions work with git core.autocrlf between different operating systems</a>或者git的<a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace">官方文档</a>。简单来说如果是做跨平台项目时可能会需要把这个设置为true，不过如果是单平台的话设置成false就可以了。（不过我没太搞懂设置这个跟解决spawn failed有什么关系？）</p><p>然而上面的方法好像不能一劳永逸，后来我还是遇到了同样的错误。这一次我尝试了第二种方法，把_config.yml文件里的repo修改成ssh格式 👉<code>git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</code><br>比如我的就修改成<code>@github.com:June-ss/june-ss.github.io.git</code>，and it worked:)<br>可能因为我之前设置了ssh key吧😀（这样每一次push的时候都可以不用密码）<br>PS 关于ssh协议，可以参考一下这篇文章：<a href="https://www.ssh.com/academy/ssh/protocol">What is the SSH Protocol</a>，关于SSH和HTTPS的对比，可以参考一下这个帖子：<a href="https://www.quora.com/What-is-the-difference-between-SSH-and-HTTPS">What is the difference between SSH and HTTPS?</a></p><p>以及，我还看到有人说，出现spawn failed也可能是网络问题，总之万事不决先重启一下试试（虽然我重启了之后并没有什么用。。。）</p><br><center>-</center><br>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> blog搭建日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Celebrate Women&#39;s Day</title>
       <link href="/2023/03/08/women-day/"/>
       <url>/2023/03/08/women-day/</url>
       
-        <content type="html"><![CDATA[<br><p>Today is International Women’s Day, and I built a tribute page to commemorate Ada Lovelace, the first computer programmer, a brilliant woman (actually it is modified on the basis of my previous project on freeCodeCamp🤣 I just added some simple fuctions using javascript I learned recently and optimised the layout).</p><p>Here is the link👉 <a href="https://ada-lovelace-tribute-page.netlify.app/">https://ada-lovelace-tribute-page.netlify.app/</a></p><p>You can also see the preview here. 👇</p><p><img src="https://i.imgur.com/xjmJXQv.png" alt="page-1"></p><p><img src="https://i.imgur.com/zfC4CGo.png" alt="page-2"></p><p><img src="https://i.imgur.com/S4uaEJE.png" alt="page-3"></p><p><img src="https://i.imgur.com/KYTIGXU.png" alt="page-4"></p><p><img src="https://i.imgur.com/jGGk6y2.png" alt="page-5"></p><p>As you can see, there is a menu button and a scroll-to-top button. 👇<br><img src="https://i.imgur.com/gbpkF7Y.gif" alt="Imgur"></p><p>Hope you enjoy it.😉</p><p>p.s. I think it is better to open this page on pc. I open the page on my phone and my pad, some fonts are not compatible and the layout somewhere looks kind of weird anyway…😢</p>]]></content>
+        <content type="html"><![CDATA[<br><p>Today is the International Women’s Day, and I built a tribute page to commemorate Ada Lovelace, the first computer programmer, a brilliant woman (actually it is modified on the basis of my previous project on freeCodeCamp🤣 I just added some simple fuctions using javascript I learned recently and optimised the layout).</p><p>Here is the link👉 <a href="https://ada-lovelace-tribute-page.netlify.app/">https://ada-lovelace-tribute-page.netlify.app/</a></p><p>You can also see the preview here. 👇</p><p><img src="https://i.imgur.com/xjmJXQv.png" alt="page-1"></p><p><img src="https://i.imgur.com/zfC4CGo.png" alt="page-2"></p><p><img src="https://i.imgur.com/S4uaEJE.png" alt="page-3"></p><p><img src="https://i.imgur.com/KYTIGXU.png" alt="page-4"></p><p><img src="https://i.imgur.com/jGGk6y2.png" alt="page-5"></p><p>As you can see, there is a menu button and a scroll-to-top button. 👇<br><img src="https://i.imgur.com/gbpkF7Y.gif" alt="Imgur"></p><p>Hope you enjoy it.😉</p><p>p.s. I think it is better to open this page on pc. I open the page on my phone and my pad, some fonts are not compatible and the layout somewhere looks kind of weird anyway…😢</p><br><center>-</center><br>]]></content>
       
       
       
