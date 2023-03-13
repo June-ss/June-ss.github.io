@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keywords" content="" />
-  <meta name="author" content="Flo L" />
+  <meta name="author" content="Florence L" />
   <meta name="description" content="" />
   
   
@@ -16,7 +16,7 @@
       
       |
     
-     Flo&#39;s Note
+     The Summer Is Ended
   </title>
 
   
@@ -35,13 +35,13 @@
 
   <!-- jquery3.3.1 -->
   
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
   
 
   <!-- fancybox -->
   
-    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
   
   
 <script src="/js/fancybox.js"></script>
@@ -167,53 +167,49 @@
           
       </div>
       <div class="markdown-body">
-        <br />
+        <br>
 
-<p><strong>受豆瓣wit小组<a href="https://douban.com/group/topic/267508386/" target="_blank">一个帖子</a>的启发，我决定搭建一个个人blog，记录我的转码过程。第一篇文章就简单记录一下利用hexo和github搭建个人blog的过程。</strong></p>
-<br />
-
+<p><strong>写在前面：</strong><br><strong>受豆瓣wit小组<a target="_blank" rel="noopener" href="https://douban.com/group/topic/267508386/">一个帖子</a>的启发，我决定搭建一个个人blog，记录我的转码过程。第一篇文章就简单记录一下利用hexo和github搭建个人blog的过程。</strong></p>
 <hr>
 <h3 id="首先是开始建站"><a href="#首先是开始建站" class="headerlink" title="首先是开始建站"></a><strong>首先是开始建站</strong></h3><ul>
 <li><p>你的电脑上需要安装git和nodejs，去官网选择适合自己的版本下载安装即可。</p>
 </li>
 <li><p>然后，你需要在GitHub上创建个人仓库。点击GitHub右上角，New repository创建新仓库，仓库名为：<strong>username.github.io</strong>。比如我的用户名为June-ss，那我创建的新仓库名就是<strong>june-ss.github.io</strong>。</p>
   <center><img src="https://i.imgur.com/MW039aq.png" alt="create a new repository" width="60%"></center>
-</li>
+  </li>
 <li><p>在自己常用的（或者准备存放blog文件的）文件夹里右键打开git，输入<code>npm install -g hexo-cli</code>安装hexo。</p>
   <center><img src="https://i.imgur.com/vLDWfoN.png" alt="git install hexo" width="80%"></center>
-
-</li>
-<li><p>安装完成后，输入<code>hexo init &lt;foldername&gt;</code>初始化你的blog，此时你的文件夹里会出现一个叫<foldername>的文件夹，这也就是你的blog文件夹。然后转到新建出来的这个文件夹，右键打开git（或者用<code>cd /path</code>命令）。</p>
+  </li>
+<li><p>安装完成后，输入<code>hexo init &lt;foldername&gt;</code>初始化你的blog，此时你的文件夹里会出现一个叫的文件夹，这也就是你的blog文件夹。然后转到新建出来的这个文件夹，右键打开git（或者用<code>cd /path</code>命令）。</p>
 </li>
 <li><p>依次输入<code>hexo g</code>、<code>hexo s</code>，然后在浏览器输入<strong>localhost:4000</strong>来对blog进行本地预览。一开始大概是这样的 👇🏼</p>
-  <center><img src="https://i.imgur.com/MN5Hgug.png" alt="default page" width="90%"></center>
-  </li>
+<center><img src="https://i.imgur.com/MN5Hgug.png" alt="default page" width="90%"></center>
+</li>
 <li><p>插入几条hexo的常见命令：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]            #初始化博客</span><br><span class="line">$ hexo new &lt;title&gt;              #新建一篇文章，new可以简写成n</span><br><span class="line">$ hexo generate                 #生成静态文件，generate可以简写成g</span><br><span class="line">$ hexo server                   #启动服务器预览，server可以简写成s，默认的访问网址为http://localhost:4000/</span><br><span class="line">$ hexo deploy                   #部署网站，deploy可以简写成d</span><br><span class="line">$ hexo clean                    #清除缓存，clean可以简写成cl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init \[folder\]            #初始化博客  </span><br><span class="line">$ hexo new &lt;title&gt;              #新建一篇文章，new可以简写成n  </span><br><span class="line">$ hexo generate                 #生成静态文件，generate可以简写成g  </span><br><span class="line">$ hexo server                   #启动服务器预览，server可以简写成s，默认的访问网址为http://localhost:4000/  </span><br><span class="line">$ hexo deploy                   #部署网站，deploy可以简写成d  </span><br><span class="line">$ hexo clean                    #清除缓存，clean可以简写成cl  </span><br></pre></td></tr></table></figure>
 </li>
 <li><p>本地预览没问题后，就可以发布网站了。打开blog文件夹里的站点配置文件（我用的是vs code）。</p>
   <center><img src="https://i.imgur.com/DjtNq6g.png" alt="open the config file" width="70%"></center>
   
 <p>  拉到最后，进行以下的修改，并ctrl+s保存。</p>
-  <img src="https://i.imgur.com/Eme8zBg.png" alt="change the deploy">
-  </li>
-<li><p>回到git命令窗口，依次输入<code>hexo cl</code>、<code>hexo g</code>、<code>hexo d</code>，然后打开浏览器，输入你的blog地址（比如我的是<a href="https://june-ss/github.io/" target="_blank">https://june-ss/github.io/</a>），就能看到你的blog网站上线了。</p>
+<p>  <img src="https://i.imgur.com/Eme8zBg.png" alt="change the deploy"></p>
+</li>
+<li><p>回到git命令窗口，依次输入<code>hexo cl</code>、<code>hexo g</code>、<code>hexo d</code>，然后打开浏览器，输入你的blog地址（比如我的是<a target="_blank" rel="noopener" href="https://june-ss/github.io/">https://june-ss/github.io/</a>），就能看到你的blog网站上线了。</p>
 </li>
 </ul>
 <hr>
-<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a><strong><strong><strong><strong><strong><strong><strong>更换主题</strong></strong></strong></strong></strong></strong></strong></h3><p>你可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a>选择你喜欢的主题进行更换。举个例子，如果你想使用<a target="_blank" rel="noopener" href="https://github.com/Dreyer/hexo-theme-artemis">artemis</a>这款主题（如图）：</p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a><strong>更换主题</strong></h3><p>你可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a>选择你喜欢的主题进行更换。举个例子，如果你想使用<a target="_blank" rel="noopener" href="https://github.com/Dreyer/hexo-theme-artemis">artemis</a>这款主题（如图）：</p>
 <center><img src="https://i.imgur.com/RWu9hOE.png" alt="artemis theme" width="80%"></center>
 
 <p>点击蓝色标题，按照作者在README.md中所写的那样安装并配置就可以了。在这里，先在git里依次输入以下指令，代表将artemis主题下载到blog目录的themes主题下的artemis文件夹中。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap</span><br><span class="line">git clone https://github.com/Dreyer/hexo-theme-artemis.git themes/artemis</span><br></pre></td></tr></table></figure>
-
+<p><code>npm install --save hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap   git clone https://github.com/Dreyer/hexo-theme-artemis.git themes/artemis  </code></p>
 <p>然后打开blog文件夹的站点配置文件（**_config.yml**），将themes改成artemis。</p>
 <center><img src="https://i.imgur.com/He5GQXF.png" alt="change your theme" width="80%"></center>
 
 <p>你也可以根据自己的喜好修改你的主题配置。</p>
 <p>配置好了之后，再次输入<code>hexo g</code>、<code>hexo d</code>部署网站（如果网页有问题的话可以输入<code>hexo cl</code>清除缓存，然后再试试）。</p>
 <hr>
-<h3 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a><strong><strong><strong><strong><strong><strong>个性化设置</strong></strong></strong></strong></strong></strong></h3><p>你也可以根据个人喜好和需要添加不同的插件。在<a href="https://hexo.io/plugins/" target="_blank">这个网页</a>你可以看到所有hexo支持的插件，每一个插件的github页面都有安装和使用的相关说明。</p>
+<h3 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a><strong>个性化设置</strong></h3><p>你也可以根据个人喜好和需要添加不同的插件。在<a target="_blank" rel="noopener" href="https://hexo.io/plugins/">这个网页</a>你可以看到所有hexo支持的插件，每一个插件的github页面都有安装和使用的相关说明。</p>
 <p>还有一些基本的设置，比如站点配置文件（**_config.yml**）里，你可以修改你的网站信息：</p>
 <center><img src="https://i.imgur.com/x2lvi47.png" alt="change your config" width="60%"></center>
 
@@ -222,16 +218,16 @@
 <p><code>author</code>是你自己的名字，主要用于显示文章的作者；</p>
 <p><code>language</code>是网站使用的语言，如果要使用简中的话（取决于你要使用的主题），一般会设置为zh-CN；</p>
 <p><code>timezone</code>是网站的时区，如果不设置的话默认为你电脑的时区。</p>
-<p>更多关于配置的信息可以参考<a href=”[https://hexo.io/docs/configuration.html](https://hexo.io/docs/configuration.html)” target="_blank">官方docs</a>。</p>
+<p>更多关于配置的信息可以参考<a href="%E2%80%9D%5Bhttps://hexo.io/docs/configuration.html%5D(https://hexo.io/docs/configuration.html)%E2%80%9D">官方docs</a>。</p>
 <hr>
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a><strong><strong><strong><strong><strong><strong>发布文章</strong></strong></strong></strong></strong></strong></h3><p>在命令行中输入<code>hexo n &lt;titlename&gt;</code>创建一篇新文章。</p>
-<p>输入这条命令之后，在<span style="font-weight: bold">\source_posts</span>文件夹中就可以看到名为<span style="font-weight: bold">&lt;title&gt;.md</span>的文件。用markdown编辑器打开（我用的是vs code，可以一边输入一边在右边预览文章效果，很方便进行修改调整），然后编辑markdown文件就可以了。</p>
+<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a><a href="#%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0" title="发布文章"></a><strong><strong><strong><strong><strong><strong>发布文章</strong></strong></strong></strong></strong></strong></h3><p>在命令行中输入<code>hexo n &lt;titlename&gt;</code>创建一篇新文章。</p>
+<p>输入这条命令之后，在\source_posts文件夹中就可以看到名为<code>&lt;title&gt;.md</code>的文件。用markdown编辑器打开（我用的是vs code，可以一边输入一边在右边预览文章效果，很方便进行修改调整），然后编辑markdown文件就可以了。</p>
 <p>举个例子：</p>
 <center><img src="https://i.imgur.com/Q1uBXwA.png" alt="create a new post" width="80%"></center>
 
 <p>编辑完成后，可以通过命令<code>hexo s --debug</code>在<strong>localhost:4000</strong>预览文章效果。确认没问题后，输入<code>hexo g</code>、<code>hexo d</code>生成、部署网页。</p>
 <hr>
-<h3 id="我遇到过的问题"><a href="#我遇到过的问题" class="headerlink" title="我遇到过的问题"></a><strong><strong><strong><strong><strong><strong><strong><strong><strong>我遇到过的问题</strong></strong></strong></strong></strong></strong></strong></strong></strong></h3><p>在进行本地预览的时候，我访问localhost:4000一直都显示无法连接：</p>
+<h3 id="我遇到过的问题"><a href="#我遇到过的问题" class="headerlink" title="我遇到过的问题"></a><strong>我遇到过的问题</strong></h3><p>在进行本地预览的时候，我访问localhost:4000一直都显示无法连接：</p>
 <center><img src="https://i.imgur.com/mgYaFf1.png" alt="cannot connect" width="90%"></center>
 
 <p>我google了半天，尝试了各种方法，包括换端口、去控制面板设置网络连接等等都没有成功。最后，重启了一下电脑，我又成功连接上了🤣</p>
@@ -239,25 +235,25 @@
 <p>还是说一下google到的两种解决办法。</p>
 <ul>
 <li><p>换端口</p>
-<p>  在git命令窗口输入<code>hexo server -p 5000</code>（这个5000也可以换成别的，比如4001之类的），然后在浏览器输入更换后的地址，比如<strong>localhost:5000</strong>。</p>
+<p>在git命令窗口输入<code>hexo server -p 5000</code>（这个5000也可以换成别的，比如4001之类的），然后在浏览器输入更换后的地址，比如<strong>localhost:5000</strong>。</p>
 </li>
 <li><p>设置网络连接</p>
-<p>  打开控制面板，点开程序和功能的【启用或关闭windows功能】。</p>
-  <center><img src="https://i.imgur.com/bXCUgsN.png" alt="control panel" width="80%"></center>
-  
-<p>  然后把Internet Information Services里的FTP服务器勾上。</p>
-  <center><img src="https://i.imgur.com/RoOKRve.png" alt="set FTP" width="80%"></center></li>
+<p>打开控制面板，点开程序和功能的【启用或关闭windows功能】。</p>
+<center><img src="https://i.imgur.com/bXCUgsN.png" alt="control panel" width="80%"></center>
+
+<p>然后把Internet Information Services里的FTP服务器勾上。</p>
+<center><img src="https://i.imgur.com/RoOKRve.png" alt="set FTP" width="80%"></center></li>
 </ul>
 <hr>
-<br/>
+<br>
 
-<center style="font-weight: bold">以上，一个简单的个人blog网站就做好了🥳</center>
+<center>以上，一个简单的个人blog网站就做好了🥳</center>
 
-<br />
+<br>
 
 <center>-</center>
 
-<br />
+<br>
       </div>
       
         <div class="prev-or-next">
@@ -331,7 +327,7 @@
         el: '#vcomments',
         appId: '113IcqqtpWpV1lw5ZCONYtJs-MdYXbMMI',
         appKey: 'p73yEGvtmNtm1YtxfcQIOnGH',
-        placeholder: 'Welcome!',
+        placeholder: 'Feel free to talk!',
         avatar: 'retro',
         lang: 'en'
       })
@@ -413,7 +409,7 @@
           </a>
         </span>
         
-          <input type="text" class="search-input" id="search-input" placeholder="find...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
         
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">

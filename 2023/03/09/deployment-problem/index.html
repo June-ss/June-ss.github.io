@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keywords" content="" />
-  <meta name="author" content="Flo L" />
+  <meta name="author" content="Florence L" />
   <meta name="description" content="" />
   
   
@@ -16,7 +16,7 @@
       
       |
     
-     Flo&#39;s Note
+     The Summer Is Ended
   </title>
 
   
@@ -35,13 +35,13 @@
 
   <!-- jquery3.3.1 -->
   
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
   
 
   <!-- fancybox -->
   
-    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
   
   
 <script src="/js/fancybox.js"></script>
@@ -172,11 +172,11 @@
 <p>之前部署blog的时候，出现了这样的错误：</p>
 <p><img src="https://i.imgur.com/JWjKCgP.png" alt="error"></p>
 <p>在网上搜了一些解决方案，第一次的时候用的是下面的方法 👇</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 进入blog的根目录</span><br><span class="line">cd /d/user/blog/</span><br><span class="line"></span><br><span class="line">## 删除git的部署文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">## 然后执行以下命令</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\## 进入blog的根目录  </span><br><span class="line">cd /d/user/blog/  </span><br><span class="line">  </span><br><span class="line">\## 删除git的部署文件夹  </span><br><span class="line">rm -rf .deploy_git/  </span><br><span class="line">  </span><br><span class="line">\## 然后执行以下命令  </span><br><span class="line">git config --global core.autocrlf false  </span><br><span class="line">  </span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
 <p>完成了之后成功部署了。</p>
 <p>当时我并不知道core.autocrlf是干嘛的，只是搜出来很多人都在说这个方法我就照做了。后来我去搜了一下core.autoarlf到底是什么，网上的解答说这个主要是解决换行符的问题。<br>具体的可以看一下这个帖子：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3206843/how-line-ending-conversions-work-with-git-core-autocrlf-between-different-operat">How line ending conversions work with git core.autocrlf between different operating systems</a>或者git的<a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace">官方文档</a>。简单来说如果是做跨平台项目时可能会需要把这个设置为true，不过如果是单平台的话设置成false就可以了（不过我没太搞懂设置这个跟解决spawn failed有什么关系？）</p>
-<p>然而上面的方法好像不能一劳永逸，后来我还是遇到了同样的错误。这一次我尝试了第二种方法，把_config.yml文件里的repo修改成ssh格式：<br>👉<code>git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</code><br>比如我的就修改成<code>@github.com:June-ss/june-ss.github.io.git</code>，and it worked:)<br>可能因为我之前设置了ssh key吧😀（这样每一次push的时候都可以不用密码）<br>PS 关于ssh协议，可以参考一下这篇文章：<a target="_blank" rel="noopener" href="https://www.ssh.com/academy/ssh/protocol">What is the SSH Protocol</a>，关于SSH和HTTPS的对比，可以参考一下这个帖子：<a target="_blank" rel="noopener" href="https://www.quora.com/What-is-the-difference-between-SSH-and-HTTPS">What is the difference between SSH and HTTPS?</a></p>
+<p>然而上面的方法好像不能一劳永逸，后来我还是遇到了同样的错误。这一次我尝试了第二种方法，把_config.yml文件里的repo修改成ssh格式：<br>👉<code>git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</code><br>比如我的就修改成<code>git@github.com:June-ss/june-ss.github.io.git</code>，and it worked:)<br>可能因为我之前设置了ssh key吧😀（这样每一次push的时候都可以不用密码）<br>PS 关于ssh协议，可以参考一下这篇文章：<a target="_blank" rel="noopener" href="https://www.ssh.com/academy/ssh/protocol">What is the SSH Protocol</a>，关于SSH和HTTPS的对比，可以参考一下这个帖子：<a target="_blank" rel="noopener" href="https://www.quora.com/What-is-the-difference-between-SSH-and-HTTPS">What is the difference between SSH and HTTPS?</a></p>
 <p>还有，如果修改配置文件的话，记得注意一下拼写。比如我在修改repo格式的时候就写错了一个标点符号，结果一直出现spawn failed，试遍了网上的方法，又去看了一遍hexo的官方文档，还是无法解决问题，直接把我给整不会了——直到我回去看了一眼配置文件:)<br>当时是这样的：<br><img src="https://i.imgur.com/CIOsA0w.png" alt="error"><br>这种因为标点符号问题出bug的事情对我来说也不是第一次了……（叹气）</p>
 <p>以及，我还看到有人说，出现spawn failed也可能是网络问题，总之万事不决先重启一下试试（虽然我重启了之后并没有什么用）</p>
 <p>Hope it helps 😺</p>
@@ -185,8 +185,6 @@
 <center>-</center>
 
 <br>
-
-
       </div>
       
         <div class="prev-or-next">
@@ -243,7 +241,7 @@
         el: '#vcomments',
         appId: '113IcqqtpWpV1lw5ZCONYtJs-MdYXbMMI',
         appKey: 'p73yEGvtmNtm1YtxfcQIOnGH',
-        placeholder: 'Welcome!',
+        placeholder: 'Feel free to talk!',
         avatar: 'retro',
         lang: 'en'
       })
@@ -325,7 +323,7 @@
           </a>
         </span>
         
-          <input type="text" class="search-input" id="search-input" placeholder="find...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
         
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">
