@@ -284,13 +284,13 @@
 <p>🌰 举个例子：</p>
 <pre><code>  Here is my [blog page](https://june-ss.github.io/ &quot;Flo&#39;s blog&quot;).
 </code></pre>
-<p>渲染出来的效果就是：Here is my <a target="_blank" rel="noopener" href="https://june-ss.github.io/" title="Flo&#39;s blog">blog page</a>.</p>
+<p>渲染出来的效果就是：Here is my <a href="https://june-ss.github.io/" title="Flo&#39;s blog">blog page</a>.</p>
 </li>
-<li><p>URL地址和email地址可以放在尖括号里，比如：<br><code>&lt;https://june-ss.github.io/&gt;</code>渲染出来的效果为 <a target="_blank" rel="noopener" href="https://june-ss.github.io/">https://june-ss.github.io/</a><br><code>&lt;fake@example.com&gt;</code>渲染出来的效果为 <a href="mailto:fake@example.com">fake@example.com</a></p>
+<li><p>URL地址和email地址可以放在尖括号里，比如：<br><code>&lt;https://june-ss.github.io/&gt;</code>渲染出来的效果为 <a href="https://june-ss.github.io/">https://june-ss.github.io/</a><br><code>&lt;fake@example.com&gt;</code>渲染出来的效果为 <a href="mailto:fake@example.com">fake@example.com</a></p>
 </li>
-<li><p>如果想要强调链接（加粗或斜体），可以在链接语法前后加上相应的标记，比如：<br><code>This is a **[link](https://june-ss.github.io/)**.</code>渲染出来的效果为 Here is my <strong><a target="_blank" rel="noopener" href="https://june-ss.github.io/">blog page</a></strong>.<br><code>This is a *[link](https://june-ss.github.io/)*.</code>渲染出来的效果为 Here is my <em><a target="_blank" rel="noopener" href="https://june-ss.github.io/">blog page</a></em>.</p>
+<li><p>如果想要强调链接（加粗或斜体），可以在链接语法前后加上相应的标记，比如：<br><code>This is a **[link](https://june-ss.github.io/)**.</code>渲染出来的效果为 Here is my <strong><a href="https://june-ss.github.io/">blog page</a></strong>.<br><code>This is a *[link](https://june-ss.github.io/)*.</code>渲染出来的效果为 Here is my <em><a href="https://june-ss.github.io/">blog page</a></em>.</p>
 </li>
-<li><p>如果要将链接表示为代码，则是给链接文本加上反引号，比如：<br><code>Here is my [`blog page`](https://june-ss.github.io/).</code> 渲染出来的效果为 Here is my <a target="_blank" rel="noopener" href="https://june-ss.github.io/"><code>blog page</code></a>.</p>
+<li><p>如果要将链接表示为代码，则是给链接文本加上反引号，比如：<br><code>Here is my [`blog page`](https://june-ss.github.io/).</code> 渲染出来的效果为 Here is my <a href="https://june-ss.github.io/"><code>blog page</code></a>.</p>
 </li>
 </ul>
 <p>注意：为了更好地兼容，尽量使用<code>%20</code>来代替链接中的空格。</p>
@@ -299,7 +299,7 @@
   
 
 <h3 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a><strong>图片语法</strong></h3><p>Markdown的图片语法为：<br><code>![a photo of sea](https://imgur.com/aeyg65Y &quot;sea&quot;)</code><br>渲染出来的效果为：<img src="https://i.imgur.com/aeyg65Y.jpg" alt="a photo of sea" title="sea"></p>
-<p>如果要为图片添加链接，则将图片放在方括号里，后面加上圆括号中的链接地址，比如：<br><code>[![sunset in Ediburgh](https://imgur.com/94hgQ6k)](https://june-ss.github.io/)</code><br>渲染出来的效果为：<a target="_blank" rel="noopener" href="https://june-ss.github.io/"><img src="https://i.imgur.com/94hgQ6k.jpg" alt="sunset in Ediburgh"></a></p>
+<p>如果要为图片添加链接，则将图片放在方括号里，后面加上圆括号中的链接地址，比如：<br><code>[![sunset in Ediburgh](https://imgur.com/94hgQ6k)](https://june-ss.github.io/)</code><br>渲染出来的效果为：<a href="https://june-ss.github.io/"><img src="https://i.imgur.com/94hgQ6k.jpg" alt="sunset in Ediburgh"></a></p>
 <p>但Markdown不支持对图片进行大小的调整，如果想要调整图片大小，可以使用HTML的<code>&lt;img&gt;</code>标签添加图片并进行调整。</p>
 <br>
 
@@ -682,12 +682,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Markdown%E8%AF%AD%E6%B3%95-1 + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F03%2F05%2Fmarkdown-syntax-1%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Markdown%E8%AF%AD%E6%B3%95-1 + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F05%2Fmarkdown-syntax-1%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/03/05/markdown-syntax-1/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/05/markdown-syntax-1/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
