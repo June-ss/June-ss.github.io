@@ -11,7 +11,7 @@
   
   <title>
     
-      Git基础 
+      正则表达式 
       
       
       |
@@ -147,11 +147,11 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">Git基础</div>
+      <div class="post-title">正则表达式</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-03-25 23:37:00
+          2023-03-26 22:11:46
         </span>
         
               <span class="post-tags">
@@ -163,73 +163,83 @@
                   </a>
                 </span>
                 
-                <span class="span--tag mr-8">
-                  <a href="/tags/basic-programming-note/" title="basic programming note">
-                    #basic programming note
-                  </a>
-                </span>
-                
               </span>
           
       </div>
       <div class="markdown-body">
-        <br>
+        <br />
 
-<h3 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h3><p>一个分布式的版本控制工具。</p>
-<ul>
-<li>工作流程：<br>在工作目录修改文件 → 在暂存区创建快照 → 提交到Git仓库<br><mark>ie.</mark> working directory → staging area → .git directory (repository)</li>
-<li>Git的三种状态：已修改(modified)、已暂存(staged)、已提交(committed)<br>  <mark>已修改</mark>：在本地修改了文件，但没有保存到数据库中<br>  <mark>已暂存</mark>：标记已修改的文件的当前版本（将更改的文件添加到暂存区中，创建快照）<br>  <mark>已提交</mark>：将暂存区中的快照提交（保存）到Git仓库中</li>
-</ul>
-<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><ul>
-<li><p>安装好Git之后，首先要设置用户名和邮箱，每一次Git的提交都会使用到这两个信息。</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 配置用户名</span><br><span class="line">git config --global user.name &lt;your_user_name&gt;</span><br><span class="line"></span><br><span class="line"># 配置邮箱</span><br><span class="line">git config --global user.email &lt;your_email_address&gt;</span><br></pre></td></tr></table></figure>
-<p>  其中，<code>global</code>配置的是当前用户的所有仓库。还可以配置<code>system</code>，指当前计算机上的所有用户；配置<code>local</code>，指当前仓库。</p>
+<p>在JavaScript（或者其它语言）中，会用到正则表达式来匹配字符串中的字符组合。<br>Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.</p>
+<h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><p>有两种方式可以创建正则表达式。<br>一种是用两个斜杠<code>/</code>，比如<code>var reg = /abc/;</code><br>一种是用RegExp对象的构造函数，比如<code>var reg = new RegExp(&quot;abc&quot;);</code></p>
+<h3 id="编写正则表达式的模式"><a href="#编写正则表达式的模式" class="headerlink" title="编写正则表达式的模式"></a>编写正则表达式的模式</h3><ul>
+<li><p>简单模式<br>  由你想匹配的字符构成。比如<code>/hello/</code>匹配的就是‘hello’，在“hello world”中可以匹配成功（但在”Hello world”中是无法匹配成功的，因为并没有严格符合<code>/hello/</code>中的每一个字符）</p>
 </li>
-<li><p>配置默认的文本编辑器：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 设置默认编辑器为vs code</span><br><span class="line">git config --glocal core.editor &quot;code --wait&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>检查配置信息：<code>git config --list</code></p>
-<p>  检查Git的某一项配置信息：<code>git config &lt;key&gt;</code></p>
-</li>
-</ul>
-<h3 id="Git基础指令"><a href="#Git基础指令" class="headerlink" title="Git基础指令"></a>Git基础指令</h3><ol>
-<li><p>初始化仓库：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建本地目录</span><br><span class="line">mkdir &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 进入项目目录</span><br><span class="line">cd &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 初始化仓库，执行指令后会在项目目录下创建一个名为.git 的子目录，含有初始化的Git仓库中所有的必须文件</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建快照：<br> 初始化之后，当前项目目录下的文件会有两种状态，一种是已跟踪（tracked），一种是未跟踪（untracked）。已跟踪的文件指已经被纳入Git的文件（Git已经知道的文件）。除了已跟踪的文件之外，就是未跟踪的文件，既不在上次快照的记录中，也没有被放到暂存区中。</p>
-<ul>
-<li><p>当你对本地的文件做出了修改时，使用<code>add</code>命令来将文件添加到暂存区：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file_name&gt;                   # 暂存单个文件</span><br><span class="line">git add &lt;file1_name&gt; &lt;file2_name&gt;     # 暂存多个文件</span><br><span class="line">git add *.py                          # 暂存一种模式的文件，比如这里为暂存目录下的所有python文件</span><br><span class="line">git add .                             # 暂存当前目录的所有内容</span><br></pre></td></tr></table></figure>
-<p>  注：提交到仓库之后，暂存区中的文件不会自动删除。如果工作目录中有文件1和文件2，然后你删除了文件2，而文件2已经被Git跟踪存放在暂存区中，那么应该使用<code>git add file2</code>指令来将文件2从暂存区中删除。</p>
-</li>
-<li><p>查看当前仓库状态：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status      # 可以查看当前分支、未跟踪文件、未提交文件等信息</span><br><span class="line">git status -s   # 查看简单的仓库状态</span><br></pre></td></tr></table></figure>
-<p>  在简览状态中，新添加的未跟踪文件前面有<code>??</code>标记，新添加到暂存区中的文件前面有<code>A</code>标记，修改过的文件前面有<code>M</code>标记。输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</p>
-</li>
-<li><p>当你确定好所有的修改准备就绪时，使用<code>commit</code>命令来将文件提交到Git仓库：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;message&quot;     # 添加单行注释（message）并提交</span><br><span class="line">git commit                  # 打开默认的文本编辑器添加注释并提交</span><br><span class="line">git commit -am &quot;message&quot;    # 跳过暂存区直接提交</span><br></pre></td></tr></table></figure>
-<p>  注释（message）：简单地描述你的这次提交，比如fix bugs, implement new feature, refactor code等等，方便查看当前提交进行了哪些修改。</p>
-<p>  PS：<br>  1) not too big and not too small<br>  2) commit often<br>  3) as you reach a state you want to record, then make a commit<br>  4) do not mix things (eg. seperate the bug-fixed and typo, make two commits)<br>  5) create a meaningful commit message</p>
-</li>
-<li><p>移除文件：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file_name&gt;             # 将文件从工作目录和暂存区中移除</span><br><span class="line">git rm --cached &lt;file_name&gt;    # 将文件从暂存区中移除</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新命名或移动文件：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;new_file_name&gt; &lt;old_file_name&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>忽略文件<br>  有时候你不想让Git追踪工作目录中的部分文件（比如日志文件，或者编译过程中创建的临时文件等）那么你可以创建一个名为<code>.gitignore</code>的文件，列出你想要忽略的文件模式。<br>  Github上的针对数十种项目及语言的<code>.gitignore</code> templates：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
-</li>
-<li><p>查看修改：<code>git diff</code></p>
-</li>
-<li><p>查看历史：<code>git log</code></p>
-</li>
-<li><p>查看指定提交：<code>git show &lt;HEAD_code&gt;</code><br>查看最近一次提交：<code>git show HEAD</code><br>查看最近前两次的那一次提交：<code>git show HEAD~2</code><br>查看指定文件在最近一次提交中的版本：<code>git show HEAD:&lt;file_name&gt;</code></p>
-</li>
-</ul>
-</li>
+<li><p>组和范围</p>
+<ol>
+<li>方括号<ol>
+<li>匹配范围内的任一字符，如<code>[abc]</code>匹配的是字符a, b, c中的任意一个字符。</li>
+<li>匹配任何不包含在范围内的字符，如<code>[^abc]</code>匹配的是任意一个非a, b, c的字符。</li>
+<li>匹配一个连续的范围内的字符，如<code>[0-9]</code>匹配的是任意一个0-9的数字，<code>[a-g]</code>匹配的是任意一个（按字母表顺序）a-g的小写字母，<code>[A-Z]</code>匹配的是任意一个大写字母。</li>
 </ol>
-<hr>
-<p>Ref:<br><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2">Git book</a><br><a target="_blank" rel="noopener" href="https://youtu.be/8JJ101D3knE">Git Tutorial for Beginners: Learn Git in 1 Hour</a></p>
+</li>
+<li>圆括号：捕获组（匹配括号中的项并记住），相邻的选择项用<code>|</code>隔开。一个正则表达式里可以有多个捕获组，通过索引值来访问（索引值从1开始）<br>  例：<code>/(test)(\s)\1/</code>会匹配到<code>&quot;test test test&quot;</code>中的<code>&quot;test test&quot;</code>部分：<code>\1</code>匹配的是第一个<code>(test)</code>。</li>
+</ol>
+</li>
+<li><p>字符类</p>
+<ol>
+<li><code>.</code>：匹配除了换行符（<code>\n</code>、<code>\r</code>）以外的单个字符，比如<code>/b.g/</code>可以匹配big, bug, bag等。</li>
+<li><code>\d</code>, <code>\D</code>：小写的<code>\d</code>匹配任意一个0-9的数字（相当于<code>[0-9]</code>），大写的<code>\D</code>表示匹配任意一个非数字字符（相当于<code>[^0-9]</code>）</li>
+<li><code>\w</code>, <code>\W</code>：小写的<code>\w</code>匹配任意一个字母、数字或下划线（相当于<code>[A-Za-z0-9_]</code>），大写的<code>\W</code>表示匹配任意一个<strong>非</strong>字母、数字或下划线的字符（相当于<code>[^A-Za-z0-9_]</code>）</li>
+<li><code>\s</code>, <code>\S</code>：小写的<code>\s</code>匹配单个空白字符，包括空格、制表符<code>[\t\v]</code>、换行符<code>[\n\r]</code>、换页符<code>\f</code>和其它Unicode空格。大写的<code>\S</code>匹配任意一个非空白符的字符。</li>
+<li><code>|</code>：表示“或”，比如<code>/x|y/</code>表示匹配字符x或y。</li>
+</ol>
+</li>
+<li><p>量词</p>
+<ol>
+<li><code>*</code>：匹配0次或更多次，比如<code>/em*/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管e后面有多少个m）或<code>&quot;e&quot;</code>（0个m）</li>
+<li><code>+</code>：匹配1次或更多次，比如<code>/em+/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管e后面有多少个m）但不能匹配<code>&quot;e&quot;</code>（因为m没有出现）</li>
+<li><code>?</code>：匹配0次或1次，比如<code>/ab?c/</code>可以匹配<code>&quot;abc&quot;</code>或<code>&quot;ac&quot;</code></li>
+<li><code>&#123;n&#125;</code>：匹配n次，其中n为正整数。比如<code>/xy&#123;2&#125;/</code>可以匹配<code>&quot;xyy&quot;</code>或<code>&quot;xyyyy&quot;</code>中的<code>&quot;xyy&quot;</code>，但不匹配<code>&quot;xy&quot;</code></li>
+<li><code>&#123;n,&#125;</code>：至少匹配n次，其中n为正整数。</li>
+<li><code>&#123;n,m&#125;</code>：匹配n~m次，其中n, m都为正整数且n&lt;m。</li>
+</ol>
+</li>
+<li><p>断言（Assertions）</p>
+<ol>
+<li><code>^</code>：匹配字符串的开头，比如<code>/^A/</code>可以匹配<code>&#39;An A&#39;</code>中的第一个’A’</li>
+<li><code>$</code>：匹配字符串的结尾，比如<code>/$t/</code>可以匹配<code>&#39;a cat&#39;</code>中的’t’</li>
+<li><code>x(?=y)</code>：当x后面跟随y时匹配x，比如对于<code>/abc(?=123)/</code>，当’abc’后面跟着’123’时才会匹配’abc’，否则不匹配</li>
+<li><code>x(?!y)</code>：当x后面没有y时匹配x，比如对于<code>/abc(?!123)/</code>，当’abc’后面没有跟着’123’时才会匹配’abc’，否则不匹配</li>
+<li><code>(?&lt;=y)x</code>：当x跟在y后面时匹配x，比如对于<code>/(?&lt;=abc)123/</code>，当’123’跟在’abc’后面时才会匹配’123’，否则不匹配</li>
+<li><code>(?&lt;!y)x</code>：当x不跟在y后面时匹配x，比如对于<code>/(?&lt;!abc)123/</code>，当’123’不跟在’abc’后面时才会匹配‘123’，否则不匹配</li>
+</ol>
+</li>
+</ul>
+<h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><p>正则表达式有六个可选参数（flags）通过使用这些参数来进行高级匹配。这些参数可以单独使用，也可以一起使用。</p>
+<ul>
+<li><code>g</code>：全局匹配</li>
+<li><code>i</code>：不区分大小写匹配</li>
+<li><code>m</code>：多行匹配</li>
+<li><code>s</code>：允许<code>.</code>匹配换行符</li>
+<li><code>u</code>：使用unicode的模式进行匹配</li>
+<li><code>y</code>：”粘性（sticky）“搜索，匹配从目标字符串的当前位置开始</li>
+</ul>
+<h3 id="在JavaScript中使用正则表达式"><a href="#在JavaScript中使用正则表达式" class="headerlink" title="在JavaScript中使用正则表达式"></a>在JavaScript中使用正则表达式</h3><ol>
+<li><p><code>test</code><br>在字符串中测试是否匹配，返回true或false<br>比如：</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myString = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> myRegex = <span class="regexp">/Hello/</span>;   <span class="comment">// match literal strings</span></span><br><span class="line"><span class="keyword">const</span> result = myRegex.<span class="title function_">test</span>(myString);   <span class="comment">// the result returns true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>match</code><br>在字符串中查找匹配的子字符串，返回一个数组，未匹配到时返回null<br>比如：</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ourStr = <span class="string">&quot;Regular expressions&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> ourRegex = <span class="regexp">/expressions/</span>;</span><br><span class="line">ourStr.<span class="title function_">match</span>(ourRegex);   <span class="comment">// return [&quot;expressions&quot;]</span></span><br><span class="line">ourStr.<span class="title function_">match</span>(<span class="regexp">/\d+/</span>);     <span class="comment">// return null</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>replace</code><br>在字符串中查找匹配的子字符串，并使用替换字符串替换匹配的子字符串<br>比如：</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Summer Dream&quot;</span>.<span class="title function_">replace</span>(<span class="regexp">/(\w+)\s(\w+)/</span>, <span class="string">&#x27;$2 $1&#x27;</span>);</span><br><span class="line"><span class="comment">// return &quot;Dream Summer&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>search</code><br>在字符串中查找匹配的子字符串，返回匹配到的位置索引，未匹配到时返回-1<br>比如：</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello Summer&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/[A-Z]/g</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(reg));       <span class="comment">// return 6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(<span class="regexp">/\d+/</span>));    <span class="comment">// return -1</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<br />
+
+<p>Ref：<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions</a></p>
 <br />
 
 <center>-</center>
@@ -240,7 +250,7 @@
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2023/03/13/backup-and-restore-your-blog/" target="_self">
+              <a href="/2023/03/25/basic-git/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>Prev</span>
               </a>
@@ -249,7 +259,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-03-25 23:37:00
+              2023-03-26 22:11:46
             </span>
             
                   <span class="post-tags">
@@ -261,21 +271,10 @@
                       </a>
                     </span>
                     
-                    <span class="span--tag mr-8">
-                      <a href="/tags/basic-programming-note/" title="basic programming note">
-                        #basic programming note
-                      </a>
-                    </span>
-                    
                   </span>
               
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2023/03/26/regex/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>
@@ -289,7 +288,7 @@
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGit"><span class="toc-text">什么是Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="toc-text">Git配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">Git基础指令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">创建正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">编写正则表达式的模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-text">可选参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8JavaScript%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">在JavaScript中使用正则表达式</span></a></li></ol>
       
     </div>
   </div>
@@ -600,12 +599,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Git%E5%9F%BA%E7%A1%80 + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F25%2Fbasic-git%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F26%2Fregex%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/25/basic-git/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/26/regex/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
