@@ -163,55 +163,61 @@
                   </a>
                 </span>
                 
+                <span class="span--tag mr-8">
+                  <a href="/tags/JavaScript/" title="JavaScript">
+                    #JavaScript
+                  </a>
+                </span>
+                
               </span>
           
       </div>
       <div class="markdown-body">
         <br />
 
-<p>在JavaScript（或者其它语言）中，会用到正则表达式来匹配字符串中的字符组合。<br>Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.</p>
-<h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><p>有两种方式可以创建正则表达式。<br>一种是用两个斜杠<code>/</code>，比如<code>var reg = /abc/;</code><br>一种是用RegExp对象的构造函数，比如<code>var reg = new RegExp(&quot;abc&quot;);</code></p>
+<p>在 JavaScript（或者其它语言）中，会用到正则表达式来匹配字符串中的字符组合。<br>Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.</p>
+<h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><p>有两种方式可以创建正则表达式。<br>一种是用两个斜杠<code>/</code>，比如<code>var reg = /abc/;</code><br>一种是用 RegExp 对象的构造函数，比如<code>var reg = new RegExp(&quot;abc&quot;);</code></p>
 <h3 id="编写正则表达式的模式"><a href="#编写正则表达式的模式" class="headerlink" title="编写正则表达式的模式"></a>编写正则表达式的模式</h3><ul>
-<li><p>简单模式<br>  由你想匹配的字符构成。比如<code>/hello/</code>匹配的就是‘hello’，在“hello world”中可以匹配成功（但在”Hello world”中是无法匹配成功的，因为并没有严格符合<code>/hello/</code>中的每一个字符）</p>
+<li><p>简单模式<br>由你想匹配的字符构成。比如<code>/hello/</code>匹配的就是‘hello’，在“hello world”中可以匹配成功（但在”Hello world”中是无法匹配成功的，因为并没有严格符合<code>/hello/</code>中的每一个字符）</p>
 </li>
 <li><p>组和范围</p>
 <ol>
 <li>方括号<ol>
-<li>匹配范围内的任一字符，如<code>[abc]</code>匹配的是字符a, b, c中的任意一个字符。</li>
-<li>匹配任何不包含在范围内的字符，如<code>[^abc]</code>匹配的是任意一个非a, b, c的字符。</li>
-<li>匹配一个连续的范围内的字符，如<code>[0-9]</code>匹配的是任意一个0-9的数字，<code>[a-g]</code>匹配的是任意一个（按字母表顺序）a-g的小写字母，<code>[A-Z]</code>匹配的是任意一个大写字母。</li>
+<li>匹配范围内的任一字符，如<code>[abc]</code>匹配的是字符 a, b, c 中的任意一个字符。</li>
+<li>匹配任何不包含在范围内的字符，如<code>[^abc]</code>匹配的是任意一个非 a, b, c 的字符。</li>
+<li>匹配一个连续的范围内的字符，如<code>[0-9]</code>匹配的是任意一个 0-9 的数字，<code>[a-g]</code>匹配的是任意一个（按字母表顺序）a-g 的小写字母，<code>[A-Z]</code>匹配的是任意一个大写字母。</li>
 </ol>
 </li>
-<li>圆括号：捕获组（匹配括号中的项并记住），相邻的选择项用<code>|</code>隔开。一个正则表达式里可以有多个捕获组，通过索引值来访问（索引值从1开始）<br>  例：<code>/(test)(\s)\1/</code>会匹配到<code>&quot;test test test&quot;</code>中的<code>&quot;test test&quot;</code>部分：<code>\1</code>匹配的是第一个<code>(test)</code>。</li>
+<li>圆括号：捕获组（匹配括号中的项并记住），相邻的选择项用<code>|</code>隔开。一个正则表达式里可以有多个捕获组，通过索引值来访问（索引值从 1 开始）<br>例：<code>/(test)(\s)\1/</code>会匹配到<code>&quot;test test test&quot;</code>中的<code>&quot;test test&quot;</code>部分：<code>\1</code>匹配的是第一个<code>(test)</code>。</li>
 </ol>
 </li>
 <li><p>字符类</p>
 <ol>
-<li><code>.</code>：匹配除了换行符（<code>\n</code>、<code>\r</code>）以外的单个字符，比如<code>/b.g/</code>可以匹配big, bug, bag等。</li>
-<li><code>\d</code>, <code>\D</code>：小写的<code>\d</code>匹配任意一个0-9的数字（相当于<code>[0-9]</code>），大写的<code>\D</code>表示匹配任意一个非数字字符（相当于<code>[^0-9]</code>）</li>
+<li><code>.</code>：匹配除了换行符（<code>\n</code>、<code>\r</code>）以外的单个字符，比如<code>/b.g/</code>可以匹配 big, bug, bag 等。</li>
+<li><code>\d</code>, <code>\D</code>：小写的<code>\d</code>匹配任意一个 0-9 的数字（相当于<code>[0-9]</code>），大写的<code>\D</code>表示匹配任意一个非数字字符（相当于<code>[^0-9]</code>）</li>
 <li><code>\w</code>, <code>\W</code>：小写的<code>\w</code>匹配任意一个字母、数字或下划线（相当于<code>[A-Za-z0-9_]</code>），大写的<code>\W</code>表示匹配任意一个<strong>非</strong>字母、数字或下划线的字符（相当于<code>[^A-Za-z0-9_]</code>）</li>
-<li><code>\s</code>, <code>\S</code>：小写的<code>\s</code>匹配单个空白字符，包括空格、制表符<code>[\t\v]</code>、换行符<code>[\n\r]</code>、换页符<code>\f</code>和其它Unicode空格。大写的<code>\S</code>匹配任意一个非空白符的字符。</li>
-<li><code>|</code>：表示“或”，比如<code>/x|y/</code>表示匹配字符x或y。</li>
+<li><code>\s</code>, <code>\S</code>：小写的<code>\s</code>匹配单个空白字符，包括空格、制表符<code>[\t\v]</code>、换行符<code>[\n\r]</code>、换页符<code>\f</code>和其它 Unicode 空格。大写的<code>\S</code>匹配任意一个非空白符的字符。</li>
+<li><code>|</code>：表示“或”，比如<code>/x|y/</code>表示匹配字符 x 或 y。</li>
 </ol>
 </li>
 <li><p>量词</p>
 <ol>
-<li><code>*</code>：匹配0次或更多次，比如<code>/em*/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管e后面有多少个m）或<code>&quot;e&quot;</code>（0个m）</li>
-<li><code>+</code>：匹配1次或更多次，比如<code>/em+/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管e后面有多少个m）但不能匹配<code>&quot;e&quot;</code>（因为m没有出现）</li>
-<li><code>?</code>：匹配0次或1次，比如<code>/ab?c/</code>可以匹配<code>&quot;abc&quot;</code>或<code>&quot;ac&quot;</code></li>
-<li><code>&#123;n&#125;</code>：匹配n次，其中n为正整数。比如<code>/xy&#123;2&#125;/</code>可以匹配<code>&quot;xyy&quot;</code>或<code>&quot;xyyyy&quot;</code>中的<code>&quot;xyy&quot;</code>，但不匹配<code>&quot;xy&quot;</code></li>
-<li><code>&#123;n,&#125;</code>：至少匹配n次，其中n为正整数。</li>
-<li><code>&#123;n,m&#125;</code>：匹配n~m次，其中n, m都为正整数且n&lt;m。</li>
+<li><code>*</code>：匹配 0 次或更多次，比如<code>/em*/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管 e 后面有多少个 m）或<code>&quot;e&quot;</code>（0 个 m）</li>
+<li><code>+</code>：匹配 1 次或更多次，比如<code>/em+/</code>可以匹配<code>&quot;emmmmm&quot;</code>（不管 e 后面有多少个 m）但不能匹配<code>&quot;e&quot;</code>（因为 m 没有出现）</li>
+<li><code>?</code>：匹配 0 次或 1 次，比如<code>/ab?c/</code>可以匹配<code>&quot;abc&quot;</code>或<code>&quot;ac&quot;</code></li>
+<li><code>&#123;n&#125;</code>：匹配 n 次，其中 n 为正整数。比如<code>/xy&#123;2&#125;/</code>可以匹配<code>&quot;xyy&quot;</code>或<code>&quot;xyyyy&quot;</code>中的<code>&quot;xyy&quot;</code>，但不匹配<code>&quot;xy&quot;</code></li>
+<li><code>&#123;n,&#125;</code>：至少匹配 n 次，其中 n 为正整数。</li>
+<li><code>&#123;n,m&#125;</code>：匹配 n~m 次，其中 n, m 都为正整数且 n&lt;m。</li>
 </ol>
 </li>
 <li><p>断言（Assertions）</p>
 <ol>
 <li><code>^</code>：匹配字符串的开头，比如<code>/^A/</code>可以匹配<code>&#39;An A&#39;</code>中的第一个’A’</li>
 <li><code>$</code>：匹配字符串的结尾，比如<code>/$t/</code>可以匹配<code>&#39;a cat&#39;</code>中的’t’</li>
-<li><code>x(?=y)</code>：当x后面跟随y时匹配x，比如对于<code>/abc(?=123)/</code>，当’abc’后面跟着’123’时才会匹配’abc’，否则不匹配</li>
-<li><code>x(?!y)</code>：当x后面没有y时匹配x，比如对于<code>/abc(?!123)/</code>，当’abc’后面没有跟着’123’时才会匹配’abc’，否则不匹配</li>
-<li><code>(?&lt;=y)x</code>：当x跟在y后面时匹配x，比如对于<code>/(?&lt;=abc)123/</code>，当’123’跟在’abc’后面时才会匹配’123’，否则不匹配</li>
-<li><code>(?&lt;!y)x</code>：当x不跟在y后面时匹配x，比如对于<code>/(?&lt;!abc)123/</code>，当’123’不跟在’abc’后面时才会匹配‘123’，否则不匹配</li>
+<li><code>x(?=y)</code>：当 x 后面跟随 y 时匹配 x，比如对于<code>/abc(?=123)/</code>，当’abc’后面跟着’123’时才会匹配’abc’，否则不匹配</li>
+<li><code>x(?!y)</code>：当 x 后面没有 y 时匹配 x，比如对于<code>/abc(?!123)/</code>，当’abc’后面没有跟着’123’时才会匹配’abc’，否则不匹配</li>
+<li><code>(?&lt;=y)x</code>：当 x 跟在 y 后面时匹配 x，比如对于<code>/(?&lt;=abc)123/</code>，当’123’跟在’abc’后面时才会匹配’123’，否则不匹配</li>
+<li><code>(?&lt;!y)x</code>：当 x 不跟在 y 后面时匹配 x，比如对于<code>/(?&lt;!abc)123/</code>，当’123’不跟在’abc’后面时才会匹配‘123’，否则不匹配</li>
 </ol>
 </li>
 </ul>
@@ -221,21 +227,14 @@
 <li><code>i</code>：不区分大小写匹配</li>
 <li><code>m</code>：多行匹配</li>
 <li><code>s</code>：允许<code>.</code>匹配换行符</li>
-<li><code>u</code>：使用unicode的模式进行匹配</li>
+<li><code>u</code>：使用 unicode 的模式进行匹配</li>
 <li><code>y</code>：”粘性（sticky）“搜索，匹配从目标字符串的当前位置开始</li>
 </ul>
-<h3 id="在JavaScript中使用正则表达式"><a href="#在JavaScript中使用正则表达式" class="headerlink" title="在JavaScript中使用正则表达式"></a>在JavaScript中使用正则表达式</h3><ol>
-<li><p><code>test</code><br>在字符串中测试是否匹配，返回true或false<br>比如：</p>
- <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myString = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> myRegex = <span class="regexp">/Hello/</span>;   <span class="comment">// match literal strings</span></span><br><span class="line"><span class="keyword">const</span> result = myRegex.<span class="title function_">test</span>(myString);   <span class="comment">// the result returns true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>match</code><br>在字符串中查找匹配的子字符串，返回一个数组，未匹配到时返回null<br>比如：</p>
- <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ourStr = <span class="string">&quot;Regular expressions&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> ourRegex = <span class="regexp">/expressions/</span>;</span><br><span class="line">ourStr.<span class="title function_">match</span>(ourRegex);   <span class="comment">// return [&quot;expressions&quot;]</span></span><br><span class="line">ourStr.<span class="title function_">match</span>(<span class="regexp">/\d+/</span>);     <span class="comment">// return null</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>replace</code><br>在字符串中查找匹配的子字符串，并使用替换字符串替换匹配的子字符串<br>比如：</p>
- <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Summer Dream&quot;</span>.<span class="title function_">replace</span>(<span class="regexp">/(\w+)\s(\w+)/</span>, <span class="string">&#x27;$2 $1&#x27;</span>);</span><br><span class="line"><span class="comment">// return &quot;Dream Summer&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>search</code><br>在字符串中查找匹配的子字符串，返回匹配到的位置索引，未匹配到时返回-1<br>比如：</p>
- <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello Summer&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/[A-Z]/g</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(reg));       <span class="comment">// return 6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(<span class="regexp">/\d+/</span>));    <span class="comment">// return -1</span></span><br></pre></td></tr></table></figure></li>
+<h3 id="在-JavaScript-中使用正则表达式"><a href="#在-JavaScript-中使用正则表达式" class="headerlink" title="在 JavaScript 中使用正则表达式"></a>在 JavaScript 中使用正则表达式</h3><ol>
+<li><code>test</code><br>在字符串中测试是否匹配，返回 true 或 false<br>比如：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myString = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> myRegex = <span class="regexp">/Hello/</span>;   <span class="comment">// match literal strings</span></span><br><span class="line"><span class="keyword">const</span> result = myRegex.<span class="title function_">test</span>(myString);   <span class="comment">// the result returns true</span></span><br></pre></td></tr></table></figure></li>
+<li><code>match</code><br>在字符串中查找匹配的子字符串，返回一个数组，未匹配到时返回 null<br>比如：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ourStr = <span class="string">&quot;Regular expressions&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> ourRegex = <span class="regexp">/expressions/</span>;</span><br><span class="line">ourStr.<span class="title function_">match</span>(ourRegex);   <span class="comment">// return [&quot;expressions&quot;]</span></span><br><span class="line">ourStr.<span class="title function_">match</span>(<span class="regexp">/\d+/</span>);     <span class="comment">// return null</span></span><br></pre></td></tr></table></figure></li>
+<li><code>replace</code><br>在字符串中查找匹配的子字符串，并使用替换字符串替换匹配的子字符串<br>比如：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Summer Dream&quot;</span>.<span class="title function_">replace</span>(<span class="regexp">/(\w+)\s(\w+)/</span>, <span class="string">&#x27;$2 $1&#x27;</span>);</span><br><span class="line"><span class="comment">// return &quot;Dream Summer&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><code>search</code><br>在字符串中查找匹配的子字符串，返回匹配到的位置索引，未匹配到时返回-1<br>比如：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello Summer&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/[A-Z]/g</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(reg));       <span class="comment">// return 6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">search</span>(<span class="regexp">/\d+/</span>));    <span class="comment">// return -1</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <br />
 
@@ -245,6 +244,7 @@
 <center>-</center>
 
 <br />
+
       </div>
       
         <div class="prev-or-next">
@@ -271,10 +271,21 @@
                       </a>
                     </span>
                     
+                    <span class="span--tag mr-8">
+                      <a href="/tags/JavaScript/" title="JavaScript">
+                        #JavaScript
+                      </a>
+                    </span>
+                    
                   </span>
               
           </div>
           <div class="post-foot-prev">
+            
+              <a href="/2023/03/31/dom-fundamentals/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
             
           </div>
         </div>
@@ -288,7 +299,7 @@
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">创建正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">编写正则表达式的模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-text">可选参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8JavaScript%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">在JavaScript中使用正则表达式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">创建正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">编写正则表达式的模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="toc-text">可选参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-JavaScript-%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">在 JavaScript 中使用正则表达式</span></a></li></ol>
       
     </div>
   </div>
