@@ -11,7 +11,7 @@
   
   <title>
     
-      Git基础 
+      vscode-shortcut 
       
       
       |
@@ -147,21 +147,15 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">Git基础</div>
+      <div class="post-title">vscode-shortcut</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-03-25 23:37:00
+          2023-05-01 23:18:02
         </span>
         
               <span class="post-tags">
                 <i class="iconfont icon-tags mr-10" title="Tags"></i>
-                
-                <span class="span--tag mr-8">
-                  <a href="/tags/web-dev-note/" title="web dev note">
-                    #web dev note
-                  </a>
-                </span>
                 
                 <span class="span--tag mr-8">
                   <a href="/tags/basic-programming-note/" title="basic programming note">
@@ -173,74 +167,87 @@
           
       </div>
       <div class="markdown-body">
-        <br>
+        <br/>
 
-<h3 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h3><p>一个分布式的版本控制工具。</p>
+<p>目前用到的一些快捷键：</p>
+<ol>
+<li><p>注释：</p>
 <ul>
-<li>工作流程：<br>在工作目录修改文件 → 在暂存区创建快照 → 提交到Git仓库<br><mark>ie.</mark> working directory → staging area → .git directory (repository)</li>
-<li>Git的三种状态：已修改(modified)、已暂存(staged)、已提交(committed)<br>  <mark>已修改</mark>：在本地修改了文件，但没有保存到数据库中<br>  <mark>已暂存</mark>：标记已修改的文件的当前版本（将更改的文件添加到暂存区中，创建快照）<br>  <mark>已提交</mark>：将暂存区中的快照提交（保存）到Git仓库中</li>
+<li>单行注释：ctrl + &#x2F;</li>
+<li>多行注释：alt + shift + a</li>
 </ul>
-<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><ul>
-<li><p>安装好Git之后，首先要设置用户名和邮箱，每一次Git的提交都会使用到这两个信息。</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 配置用户名</span><br><span class="line">git config --global user.name &lt;your_user_name&gt;</span><br><span class="line"></span><br><span class="line"># 配置邮箱</span><br><span class="line">git config --global user.email &lt;your_email_address&gt;</span><br></pre></td></tr></table></figure>
-<p>  其中，<code>global</code>配置的是当前用户的所有仓库。还可以配置<code>system</code>，指当前计算机上的所有用户；配置<code>local</code>，指当前仓库。</p>
 </li>
-<li><p>配置默认的文本编辑器：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 设置默认编辑器为vs code</span><br><span class="line">git config --glocal core.editor &quot;code --wait&quot;</span><br></pre></td></tr></table></figure>
+<li><p>移动行：alt + up&#x2F;down</p>
 </li>
-<li><p>检查配置信息：<code>git config --list</code></p>
-<p>  检查Git的某一项配置信息：<code>git config &lt;key&gt;</code></p>
+<li><p>显示&#x2F;隐藏左侧目录栏：ctrl + b</p>
 </li>
-</ul>
-<h3 id="Git基础指令"><a href="#Git基础指令" class="headerlink" title="Git基础指令"></a>Git基础指令</h3><ol>
-<li><p>初始化仓库：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建本地目录</span><br><span class="line">mkdir &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 进入项目目录</span><br><span class="line">cd &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 初始化仓库，执行指令后会在项目目录下创建一个名为.git 的子目录，含有初始化的Git仓库中所有的必须文件</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+<li><p>显示&#x2F;隐藏控制台终端：ctrl + &#96;</p>
 </li>
-<li><p>创建快照：<br> 初始化之后，当前项目目录下的文件会有两种状态，一种是已跟踪（tracked），一种是未跟踪（untracked）。已跟踪的文件指已经被纳入Git的文件（Git已经知道的文件）。除了已跟踪的文件之外，就是未跟踪的文件，既不在上次快照的记录中，也没有被放到暂存区中。</p>
+<li><p>自动换行：alt + z</p>
+</li>
+<li><p>选中文字：shift + up&#x2F;down&#x2F;left&#x2F;right</p>
+</li>
+<li><p>选择整行：ctrl + l</p>
+</li>
+<li><p>复制整行：shift + alt + up&#x2F;down</p>
+</li>
+<li><p>跳过单词：ctrl + left&#x2F;right</p>
+</li>
+<li><p>当前文件查找：ctrl + f</p>
+</li>
+<li><p>全局查找：ctrl + f</p>
+</li>
+<li><p>折叠代码：</p>
 <ul>
-<li><p>当你对本地的文件做出了修改时，使用<code>add</code>命令来将文件添加到暂存区：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file_name&gt;                   # 暂存单个文件</span><br><span class="line">git add &lt;file1_name&gt; &lt;file2_name&gt;     # 暂存多个文件</span><br><span class="line">git add *.py                          # 暂存一种模式的文件，比如这里为暂存目录下的所有python文件</span><br><span class="line">git add .                             # 暂存当前目录的所有内容</span><br></pre></td></tr></table></figure>
-<p>  注：提交到仓库之后，暂存区中的文件不会自动删除。如果工作目录中有文件1和文件2，然后你删除了文件2，而文件2已经被Git跟踪存放在暂存区中，那么应该使用<code>git add file2</code>指令来将文件2从暂存区中删除。</p>
-</li>
-<li><p>查看当前仓库状态：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status      # 可以查看当前分支、未跟踪文件、未提交文件等信息</span><br><span class="line">git status -s   # 查看简单的仓库状态</span><br></pre></td></tr></table></figure>
-<p>  在简览状态中，新添加的未跟踪文件前面有<code>??</code>标记，新添加到暂存区中的文件前面有<code>A</code>标记，修改过的文件前面有<code>M</code>标记。输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</p>
-</li>
-<li><p>当你确定好所有的修改准备就绪时，使用<code>commit</code>命令来将文件提交到Git仓库：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;message&quot;     # 添加单行注释（message）并提交</span><br><span class="line">git commit                  # 打开默认的文本编辑器添加注释并提交</span><br><span class="line">git commit -am &quot;message&quot;    # 跳过暂存区直接提交</span><br></pre></td></tr></table></figure>
-<p>  注释（message）：简单地描述你的这次提交，比如fix bugs, implement new feature, refactor code等等，方便查看当前提交进行了哪些修改。</p>
-<p>  PS：<br>  1) not too big and not too small<br>  2) commit often<br>  3) as you reach a state you want to record, then make a commit<br>  4) do not mix things (eg. seperate the bug-fixed and typo, make two commits)<br>  5) create a meaningful commit message</p>
-</li>
-<li><p>移除文件：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file_name&gt;             # 将文件从工作目录和暂存区中移除</span><br><span class="line">git rm --cached &lt;file_name&gt;    # 将文件从暂存区中移除</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新命名或移动文件：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;new_file_name&gt; &lt;old_file_name&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>忽略文件<br>  有时候你不想让Git追踪工作目录中的部分文件（比如日志文件，或者编译过程中创建的临时文件等）那么你可以创建一个名为<code>.gitignore</code>的文件，列出你想要忽略的文件模式。<br>  Github上的针对数十种项目及语言的<code>.gitignore</code> templates：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
-</li>
-<li><p>查看修改：<code>git diff</code></p>
-</li>
-<li><p>查看历史：<code>git log</code></p>
-</li>
-<li><p>查看指定提交：<code>git show &lt;HEAD_code&gt;</code><br>查看最近一次提交：<code>git show HEAD</code><br>查看最近前两次的那一次提交：<code>git show HEAD~2</code><br>查看指定文件在最近一次提交中的版本：<code>git show HEAD:&lt;file_name&gt;</code></p>
-</li>
+<li>ctrl + k + 0-9</li>
+<li>折叠鼠标所在代码段：ctrl + shift + [</li>
 </ul>
+</li>
+<li><p>展开代码：</p>
+<ul>
+<li>完全展开代码：ctrl + k + j</li>
+<li>展开鼠标所在代码段：ctrl + shift + ]</li>
+</ul>
+</li>
+<li><p>删除行：ctrl + shift + k</p>
+</li>
+<li><p>回到顶部：ctrl + home</p>
+</li>
+<li><p>回到底部：ctrl + end</p>
+</li>
+<li><p>选中代码：shift + 鼠标左键（光标到鼠标点击处）</p>
+</li>
+<li><p>多行同时添加内容（光标）：ctrl + alt + up&#x2F;down</p>
+</li>
+<li><p>同时选中多个相同内容：ctrl + d</p>
+</li>
+<li><p>当前文件替换：ctrl + h</p>
+</li>
+<li><p>全局替换：ctrl + shift + h</p>
+</li>
+<li><p>打开最近打开的文件：ctrl + r</p>
+</li>
+<li><p>打开新的命令窗口：ctrl + shift + c</p>
+</li>
+<li><p>关闭编辑器窗口：ctrl + w</p>
+</li>
+<li><p>关闭所有窗口：ctrl + k + w</p>
+</li>
+<li><p>字体放大&#x2F;缩小：ctrl + (+&#x2F;-)</p>
 </li>
 </ol>
-<hr>
-<p>Ref:<br><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2">Git book</a><br><a target="_blank" rel="noopener" href="https://youtu.be/8JJ101D3knE">Git Tutorial for Beginners: Learn Git in 1 Hour</a></p>
-<br />
+<br/>
 
 <center>-</center>
 
-<br />
+<br/>
+
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2023/03/13/backup-and-restore-your-blog/" target="_self">
+              <a href="/2023/03/31/dom-fundamentals/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>Prev</span>
               </a>
@@ -249,17 +256,11 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-03-25 23:37:00
+              2023-05-01 23:18:02
             </span>
             
                   <span class="post-tags">
                     <i class="iconfont icon-tags mr-10" title="Tags"></i>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/tags/web-dev-note/" title="web dev note">
-                        #web dev note
-                      </a>
-                    </span>
                     
                     <span class="span--tag mr-8">
                       <a href="/tags/basic-programming-note/" title="basic programming note">
@@ -272,33 +273,11 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2023/03/26/regex/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
           </div>
         </div>
       
     </div>
     
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">Contents</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGit"><span class="toc-text">什么是Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="toc-text">Git配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">Git基础指令</span></a></li></ol>
-      
-    </div>
-  </div>
-
-  
-<script src="/js/catalog.js"></script>
-
-
-
 
     
       <div class="comments-container">
@@ -600,12 +579,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Git%E5%9F%BA%E7%A1%80 + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F25%2Fbasic-git%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + vscode-shortcut + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F05%2F01%2Fvscode-shortcut%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/25/basic-git/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/05/01/vscode-shortcut/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         

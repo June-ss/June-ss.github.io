@@ -11,7 +11,7 @@
   
   <title>
     
-      Tag 
+      archive_a: 2023/5 
       
       
       |
@@ -102,55 +102,104 @@
 
 
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
+<!-- last: 按年份把文章分组，当前遍历到的年份 -->
+<!-- now: 当前遍历到的文章的发布年份 -->
 
-  <!-- LaTex Display -->
-
-  
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
-  
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    }
-  </script>
-
-
-
-
-
-  <!-- clipboard -->
-
-  
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
-  
-  
-<script src="/js/codeCopy.js"></script>
-
-
-
-
-
-
-  <!-- 标签页 url形式：https://yoursite/tags/ -->
-  <div class="container tag-index">
-    <div>
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic-programming-note/" rel="tag">basic programming note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" rel="tag">blog搭建日记</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/my-projects/" rel="tag">my projects</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-dev-note/" rel="tag">web dev note</a><span class="tag-list-count">3</span></li></ul>
-    </div>
+<div class="container archives">
+  <div class="post-list">
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2023</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="vscode-shortcut">
+        <div class="time-m-d">05-01</div>
+        <div class="title">
+          <a href="/2023/05/01/vscode-shortcut/">
+            <span>vscode-shortcut</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="DOM-基础">
+        <div class="time-m-d">03-31</div>
+        <div class="title">
+          <a href="/2023/03/31/dom-fundamentals/">
+            <span>DOM-基础</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="正则表达式">
+        <div class="time-m-d">03-26</div>
+        <div class="title">
+          <a href="/2023/03/26/regex/">
+            <span>正则表达式</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Git基础">
+        <div class="time-m-d">03-26</div>
+        <div class="title">
+          <a href="/2023/03/26/basic-git/">
+            <span>Git基础</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="blog的备份与恢复">
+        <div class="time-m-d">03-13</div>
+        <div class="title">
+          <a href="/2023/03/13/backup-and-restore-your-blog/">
+            <span>blog的备份与恢复</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="hexo部署时出现'spawn failed'错误">
+        <div class="time-m-d">03-09</div>
+        <div class="title">
+          <a href="/2023/03/09/deployment-problem/">
+            <span>hexo部署时出现'spawn failed'错误</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Celebrate Women's Day">
+        <div class="time-m-d">03-08</div>
+        <div class="title">
+          <a href="/2023/03/08/women-day/">
+            <span>Celebrate Women's Day</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Markdown语法-1">
+        <div class="time-m-d">03-05</div>
+        <div class="title">
+          <a href="/2023/03/05/markdown-syntax-1/">
+            <span>Markdown语法-1</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="从零开始搭建Blog">
+        <div class="time-m-d">03-04</div>
+        <div class="title">
+          <a href="/2023/03/04/build-a-blog/">
+            <span>从零开始搭建Blog</span>
+          </a>
+        </div>
+      </div>
+    
   </div>
-  
-
-  
-
-  
-
-  
-
-  
+</div>
 
         
 <div class="footer">
@@ -405,24 +454,6 @@
 
 
         
-  
-    <div class="share-icon tools-bar-item">
-      <a href="javascript: void(0)" id="share-icon">
-        <i class="iconfont iconshare"></i>
-      </a>
-      <div class="share-content hidden">
-        
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + tags + '&url=' + https%3A%2F%2Fjune-ss.github.io%2Ftags%2Findex.html + '" target="_blank" title="Twitter">
-            <i class="iconfont icon-twitter"></i>
-          </a>
-        
-        
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/tags/index.html" target="_blank" title="Facebook">
-            <i class="iconfont icon-facebooksquare"></i>
-          </a>
-        
-      </div>
-    </div>
   
   
 <script src="/js/shares.js"></script>

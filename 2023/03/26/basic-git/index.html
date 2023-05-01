@@ -11,7 +11,7 @@
   
   <title>
     
-      blog的备份与恢复 
+      Git基础 
       
       
       |
@@ -147,19 +147,25 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">blog的备份与恢复</div>
+      <div class="post-title">Git基础</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-03-13 14:52:34
+          2023-03-26 00:37:00
         </span>
         
               <span class="post-tags">
                 <i class="iconfont icon-tags mr-10" title="Tags"></i>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
-                    #blog搭建日记
+                  <a href="/tags/web-dev-note/" title="web dev note">
+                    #web dev note
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/basic-programming-note/" title="basic programming note">
+                    #basic programming note
                   </a>
                 </span>
                 
@@ -169,35 +175,72 @@
       <div class="markdown-body">
         <br>
 
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>事情是这样的，前两天捣鼓git的时候，在磁盘的根目录初始化了一个仓库，然后我每次打开vs code都会看到旁边source control那里显示有10000+条changes。作为一个强迫症，我看到那个大圆点就很不爽，于是昨天我做了一件蠢事，手贱点了一下discard changes，也就是“放弃所有更改”。</p>
-<p>一开始，vs code还提醒我：你确定要删掉这些文件吗？（类似于这样）</p>
-<center><img src="https://imgur.com/lIwFpwN.png" alt="warning" width="80%"></center>
-
-<p>我以为它删除只是从它这个changes的列表里删除，压根没注意到第三行，于是一个冲动就点下了确认😐过了几秒，我看这好多条更改要删得删好久我心想我还有别的事要做呢，就直接把vs code关了，打算下次再说。结果过了一会儿打开blog文件夹一看，_posts文件夹里全空了，再打开磁盘下的其它一些文件夹，也空了（不过感谢我的没耐心，我丢失的文件也就几十G而已😶）</p>
-<p>总之因为我的手贱操作，blog文件夹里的很多文件都没了，包括post的文章和站点配置文件。</p>
-<p>所以，没事别随便乱点确认按钮，以及记得及时备份。</p>
+<h3 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h3><p>一个分布式的版本控制工具。</p>
+<ul>
+<li>工作流程：<br>在工作目录修改文件 → 在暂存区创建快照 → 提交到Git仓库<br><mark>ie.</mark> working directory → staging area → .git directory (repository)</li>
+<li>Git的三种状态：已修改(modified)、已暂存(staged)、已提交(committed)<br>  <mark>已修改</mark>：在本地修改了文件，但没有保存到数据库中<br>  <mark>已暂存</mark>：标记已修改的文件的当前版本（将更改的文件添加到暂存区中，创建快照）<br>  <mark>已提交</mark>：将暂存区中的快照提交（保存）到Git仓库中</li>
+</ul>
+<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><ul>
+<li><p>安装好Git之后，首先要设置用户名和邮箱，每一次Git的提交都会使用到这两个信息。</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 配置用户名</span><br><span class="line">git config --global user.name &lt;your_user_name&gt;</span><br><span class="line"></span><br><span class="line"># 配置邮箱</span><br><span class="line">git config --global user.email &lt;your_email_address&gt;</span><br></pre></td></tr></table></figure>
+<p>  其中，<code>global</code>配置的是当前用户的所有仓库。还可以配置<code>system</code>，指当前计算机上的所有用户；配置<code>local</code>，指当前仓库。</p>
+</li>
+<li><p>配置默认的文本编辑器：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 设置默认编辑器为vs code</span><br><span class="line">git config --glocal core.editor &quot;code --wait&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查配置信息：<code>git config --list</code></p>
+<p>  检查Git的某一项配置信息：<code>git config &lt;key&gt;</code></p>
+</li>
+</ul>
+<h3 id="Git基础指令"><a href="#Git基础指令" class="headerlink" title="Git基础指令"></a>Git基础指令</h3><ol>
+<li><p>初始化仓库：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建本地目录</span><br><span class="line">mkdir &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 进入项目目录</span><br><span class="line">cd &lt;dir_name&gt;</span><br><span class="line"></span><br><span class="line"># 初始化仓库，执行指令后会在项目目录下创建一个名为.git 的子目录，含有初始化的Git仓库中所有的必须文件</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建快照：<br> 初始化之后，当前项目目录下的文件会有两种状态，一种是已跟踪（tracked），一种是未跟踪（untracked）。已跟踪的文件指已经被纳入Git的文件（Git已经知道的文件）。除了已跟踪的文件之外，就是未跟踪的文件，既不在上次快照的记录中，也没有被放到暂存区中。</p>
+<ul>
+<li><p>当你对本地的文件做出了修改时，使用<code>add</code>命令来将文件添加到暂存区：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file_name&gt;                   # 暂存单个文件</span><br><span class="line">git add &lt;file1_name&gt; &lt;file2_name&gt;     # 暂存多个文件</span><br><span class="line">git add *.py                          # 暂存一种模式的文件，比如这里为暂存目录下的所有python文件</span><br><span class="line">git add .                             # 暂存当前目录的所有内容</span><br></pre></td></tr></table></figure>
+<p>  注：提交到仓库之后，暂存区中的文件不会自动删除。如果工作目录中有文件1和文件2，然后你删除了文件2，而文件2已经被Git跟踪存放在暂存区中，那么应该使用<code>git add file2</code>指令来将文件2从暂存区中删除。</p>
+</li>
+<li><p>查看当前仓库状态：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status      # 可以查看当前分支、未跟踪文件、未提交文件等信息</span><br><span class="line">git status -s   # 查看简单的仓库状态</span><br></pre></td></tr></table></figure>
+<p>  在简览状态中，新添加的未跟踪文件前面有<code>??</code>标记，新添加到暂存区中的文件前面有<code>A</code>标记，修改过的文件前面有<code>M</code>标记。输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</p>
+</li>
+<li><p>当你确定好所有的修改准备就绪时，使用<code>commit</code>命令来将文件提交到Git仓库：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;message&quot;     # 添加单行注释（message）并提交</span><br><span class="line">git commit                  # 打开默认的文本编辑器添加注释并提交</span><br><span class="line">git commit -am &quot;message&quot;    # 跳过暂存区直接提交</span><br></pre></td></tr></table></figure>
+<p>  注释（message）：简单地描述你的这次提交，比如fix bugs, implement new feature, refactor code等等，方便查看当前提交进行了哪些修改。</p>
+<p>  PS：<br>  1) not too big and not too small<br>  2) commit often<br>  3) as you reach a state you want to record, then make a commit<br>  4) do not mix things (eg. seperate the bug-fixed and typo, make two commits)<br>  5) create a meaningful commit message</p>
+</li>
+<li><p>移除文件：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file_name&gt;             # 将文件从工作目录和暂存区中移除</span><br><span class="line">git rm --cached &lt;file_name&gt;    # 将文件从暂存区中移除</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新命名或移动文件：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;new_file_name&gt; &lt;old_file_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>忽略文件<br>  有时候你不想让Git追踪工作目录中的部分文件（比如日志文件，或者编译过程中创建的临时文件等）那么你可以创建一个名为<code>.gitignore</code>的文件，列出你想要忽略的文件模式。<br>  Github上的针对数十种项目及语言的<code>.gitignore</code> templates：<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+</li>
+<li><p>查看修改：<code>git diff</code></p>
+</li>
+<li><p>查看历史：<code>git log</code></p>
+</li>
+<li><p>查看指定提交：<code>git show &lt;HEAD_code&gt;</code><br>查看最近一次提交：<code>git show HEAD</code><br>查看最近前两次的那一次提交：<code>git show HEAD~2</code><br>查看指定文件在最近一次提交中的版本：<code>git show HEAD:&lt;file_name&gt;</code></p>
+</li>
+</ul>
+</li>
+</ol>
 <hr>
-<h3 id="blog的备份"><a href="#blog的备份" class="headerlink" title="blog的备份"></a>blog的备份</h3><p>其实需要备份的并不多，只要备份好post的文章的markdown文件和站点配置文件就行（当然如果你有别的个性化配置，比如自己添加了一些东西的话最好也备份一下）</p>
-<p>关于备份的方法，可以在github新建一个分支，或者新建一个private repo专门用来存放blog的备份文件。不嫌麻烦的话，在别的地方（比如云盘、硬盘或者其它平台之类的）备份也可以。</p>
-<p>当然如果markdown文件没了，其实可以回到github的仓库，点开文章的HTML文件，找到正文部分，转换成markdown格式在本地重新生成。文章不多的话工作量倒也不是很大。</p>
-<p>以我<a href="https://june-ss.github.io/2023/03/09/deployment-problem/">hexo部署出错</a>的那篇post为例，正文部分就是这些，找到markdown-body这里就行：</p>
-<center><img src="https://i.imgur.com/4o9Eg16.png" alt="markdown-body" width="80%"></center>
-
-<p>站点配置文件没了也没关系（只要自己改动不多的话）可以自己重新设置一下。</p>
-<br>
-
-<h3 id="blog的恢复"><a href="#blog的恢复" class="headerlink" title="blog的恢复"></a>blog的恢复</h3><p>如果要恢复blog的本地文件夹，可以按照<a href="https://june-ss.github.io/2023/03/04/build-a-blog/">从零开始搭建blog</a>那样，重新安装hexo、初始化blog、下载主题，然后把备份的markdown文件放回到_posts文件夹里、把配置文件放回到根目录里（或者主题文件夹里，原来在哪就还是在哪），接着执行<code>hexo s --debug</code>看一下效果（不看也行）再<code>hexo g &amp;&amp; hexo d</code>就ok了。</p>
-<br>
+<p>Ref:<br><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2">Git book</a><br><a target="_blank" rel="noopener" href="https://youtu.be/8JJ101D3knE">Git Tutorial for Beginners: Learn Git in 1 Hour</a></p>
+<br />
 
 <center>-</center>
 
-<br>
+<br />
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2023/03/09/deployment-problem/" target="_self">
+              <a href="/2023/03/13/backup-and-restore-your-blog/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>Prev</span>
               </a>
@@ -206,15 +249,21 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-03-13 14:52:34
+              2023-03-26 00:37:00
             </span>
             
                   <span class="post-tags">
                     <i class="iconfont icon-tags mr-10" title="Tags"></i>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/blog%E6%90%AD%E5%BB%BA%E6%97%A5%E8%AE%B0/" title="blog搭建日记">
-                        #blog搭建日记
+                      <a href="/tags/web-dev-note/" title="web dev note">
+                        #web dev note
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/basic-programming-note/" title="basic programming note">
+                        #basic programming note
                       </a>
                     </span>
                     
@@ -223,7 +272,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2023/03/26/basic-git/" target="_self">
+              <a href="/2023/03/26/regex/" target="_self">
                 <span>Next</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -240,7 +289,7 @@
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blog%E7%9A%84%E5%A4%87%E4%BB%BD"><span class="toc-text">blog的备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blog%E7%9A%84%E6%81%A2%E5%A4%8D"><span class="toc-text">blog的恢复</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGit"><span class="toc-text">什么是Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="toc-text">Git配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">Git基础指令</span></a></li></ol>
       
     </div>
   </div>
@@ -551,12 +600,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + blog%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F13%2Fbackup-and-restore-your-blog%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Git%E5%9F%BA%E7%A1%80 + '&url=' + https%3A%2F%2Fjune-ss.github.io%2F2023%2F03%2F26%2Fbasic-git%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/13/backup-and-restore-your-blog/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://june-ss.github.io/2023/03/26/basic-git/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
